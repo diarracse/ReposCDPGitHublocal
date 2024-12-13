@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inscription</title>
+    <title>Connexion</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
             font-family: Arial, sans-serif;
             background-color: #ffffff;
-            margin: 10%;
+            margin: 0;
             padding: 0;
             display: flex;
             justify-content: center;
@@ -19,7 +19,7 @@
         .form-container {
             border-radius: 20px;
             padding: 40px;
-            max-width: 450px;
+            max-width: 400px;
             background-color: #ffffff;
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
             text-align: center;
@@ -60,7 +60,7 @@
             padding: 10px 20px;
             color: #f05423;
             font-size: 16px;
-            width: 150px;
+            width: 180px;
             margin: 20px auto;
             text-align: center;
             line-height: 1.5;
@@ -86,16 +86,8 @@
 <body>
 
 <div class="form-container">
-    <h2>Inscription</h2>
+    <h2>Connexion</h2>
     <form>
-        <div class="form-group">
-            <label for="nom">Nom</label>
-            <input type="text" id="nom" class="form-control" required placeholder="Votre nom">
-        </div>
-        <div class="form-group">
-            <label for="prenom">Prénom</label>
-            <input type="text" id="prenom" class="form-control" required placeholder="Votre prénom">
-        </div>
         <div class="form-group">
             <label for="email">Email</label>
             <input type="email" id="email" class="form-control" required placeholder="Votre email">
@@ -104,20 +96,8 @@
             <label for="password">Mot de passe</label>
             <input type="password" id="password" class="form-control" required placeholder="Votre mot de passe">
         </div>
-        <div class="form-group">
-            <label for="confirm-password">Confirmer mot de passe</label>
-            <input type="password" id="confirm-password" class="form-control" required placeholder="Confirmer votre mot de passe">
-        </div>
-        <div class="form-group">
-            <label for="type-adhesion">Type d'adhésion</label>
-            <select id="type-adhesion" class="form-control">
-                <option value="" disabled selected>Choisissez une option</option>
-                <option>Option 1</option>
-                <option>Option 2</option>
-            </select>
-        </div>
-        <button type="submit" class="btn-primary">Envoyer</button>
-        <p class="mt-3">Vous avez déjà un compte ? <a href="connexions.php">Se connecter</a></p>
+        <button type="submit" class="btn-primary">Se connecter</button>
+        <p class="mt-3">Vous n'avez pas de compte ? <a href="inscription.php">S'inscrire</a></p>
     </form>
 </div>
 
