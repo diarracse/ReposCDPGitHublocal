@@ -1,0 +1,59 @@
+/* le footer */
+footer {
+    background-color: #F37038;
+
+}
+
+footer h5 {
+    color: white;
+}
+
+footer ul {
+    color: white;
+}
+
+footer ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+}
+
+footer ul li a:hover {
+    text-decoration: underline;
+}
+
+/* le menu */
+nav {
+    background-color: #F37038;
+    padding: 15px 0;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a.active {
+    color: #1e1e1c;
+}
+
+ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+ul li a:hover {
+    color: #1e1e1c;
+}
+
