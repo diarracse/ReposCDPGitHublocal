@@ -1,0 +1,41 @@
+/* Style des cartes */
+.preference-card {
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 15px;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Ombre plus sombre */
+}
+
+.preference-card i {
+    color: #333; /* Couleur des icônes */
+    transition: color 0.3s ease;
+}
+
+/* Effet hover (survol) */
+.preference-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.4); /* Ombre plus sombre au survol */
+}
+
+/* Effet sélectionné */
+.preference-card.selected {
+    border: 3px solid #f05423; /* Contour orange */
+    box-shadow: 0 0 15px rgba(240, 84, 35, 0.7); /* Ombre orange plus marquée */
+    transform: scale(1.05); /* Zoom */
+}
+
+/* Bouton Valider */
+.btn-outline-danger {
+    border: 2px solid #f05423;
+    color: #f05423;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+}
+
+.btn-outline-danger:hover {
+    background-color: #f05423;
+    color: #fff;
+}
