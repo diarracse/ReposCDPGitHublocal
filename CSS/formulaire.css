@@ -1,17 +1,16 @@
-body {
+.main-form {
     font-family: Arial, sans-serif;
     background-color: #ffffff;
     margin: 10%;
     padding: 0;
     display: flex;
     justify-content: center;
-    align-items: center;
-    height: 100vh;
 }
+
 .form-container {
     border-radius: 20px;
-    padding: 40px;
-    max-width: 400px;
+    padding: 60px;
+    width: 550px;
     background-color: #ffffff;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
     text-align: center;
@@ -72,4 +71,11 @@ p.mt-3 a {
 }
 p.mt-3 a:hover {
     text-decoration: underline;
+}
+
+textarea {
+    height: 120px;
+    resize: none; /* Désactive la poignée de redimensionnement */
+
+    
 }
