@@ -76,6 +76,11 @@ p.mt-3 a:hover {
 textarea {
     height: 120px;
     resize: none; /* Désactive la poignée de redimensionnement */
+}
 
-    
+.p_contact {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+    color: grey;
 }
