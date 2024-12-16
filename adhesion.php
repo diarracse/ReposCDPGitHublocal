@@ -14,7 +14,7 @@
 
         <section class="m-5 grid gap-0">
 
-            <div class="text-center col-8 offset-2 ">
+            <div class="text-center col-8 offset-2">
                 <div class="w-100 d-flex justify-content-center">
                     <h1 class="mb-4 w-75 fw-bold">Devenir adhérent de Vivre Saint-Fortunat</h1>
                 </div>
@@ -23,7 +23,7 @@
                 </div>
             </div>
 
-            <section class="container col-12" id="collections">
+            <section class="container col-12 mt-5" id="collections">
 
                 <div class="row d-lg-flex ">
 
@@ -46,9 +46,9 @@
 
 
         <a class="CTA" href="inscription.php">Nous rejoindre</a>
-
+    
     </main>
-
+    <?php include('footer.php'); ?>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
