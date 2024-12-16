@@ -57,3 +57,21 @@ ul li a:hover {
     color: #1e1e1c;
 }
 
+.p-adhesion{
+    text-align: justify;
+}
+
+.CTA{
+    border: 1px solid #F37038;
+    border-radius: 30px;
+    text-decoration: none;
+    color: #F37038;
+    padding: 10px 20px;
+    margin-top: 40px;
+    transition: 0.5s ease;
+}
+
+.CTA:hover{
+    background-color: #F37038;
+    color: white;
+}
