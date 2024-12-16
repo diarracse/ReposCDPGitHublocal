@@ -37,8 +37,8 @@
                     <label for="message">Message</label>
                     <textarea type="textarea" id="message" class="form-control" required placeholder="Votre message"></textarea>
                 </div>
-                <button type="submit" class="btn-primary">Envoyer</button>
-                <p class="mt-3">Vous avez déjà un compte ? <a href="connexions.php">Se connecter</a></p>
+                <button type="submit" class="CTA">Envoyer</button>
+                
             </form>
 
         </div>
