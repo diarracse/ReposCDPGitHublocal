@@ -27,33 +27,33 @@ footer ul li a:hover {
 }
 
 /* le menu */
-menu {
+.menu {
     background-color: #F37038;
     padding: 15px 0;
 }
 
-menu ul {
+.menu ul {
     list-style: none;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-menu ul li {
+.menu ul li {
     margin: 0 15px;
 }
 
-menu ul li a.active {
+.menu ul li a.active {
     color: #1e1e1c;
 }
 
-menu ul li a {
+.menu ul li a {
     color: #ffffff;
     text-decoration: none;
     transition: color 0.3s;
 }
 
-menu ul li a:hover {
+.menu ul li a:hover {
     color: #1e1e1c;
 }
 
@@ -66,8 +66,10 @@ menu ul li a:hover {
     border-radius: 30px;
     text-decoration: none;
     color: #F37038;
-    padding: 10px 20px;
-    margin-top: 40px;
+    background-color: white;
+    padding: 10px 30px;
+    margin-top: 20px;
+    margin-bottom: 20px;
     transition: 0.5s ease;
 }
 
@@ -117,7 +119,7 @@ menu ul li a:hover {
     border-radius: 30px;
     text-decoration: none;
     color: #ffffff;
-    padding: 10px 20px;
+    padding: 10px 30px;
     margin-top: 40px;
     transition: 0.5s ease;
     background-color: #F37038;
