@@ -1,16 +1,17 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="JS/AjoutEvenement.js"></script>
     <title>Page Admin</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="CSS/style.css">
 </head>
 
 <body>
-    <?php include 'menu.php'; ?>
+    <?php include('include/menu.php'); ?>
 
     <form id="formEvenement" class="container p-5 my-5 shadow rounded-5">
 
@@ -50,8 +51,10 @@
     </form>
 
 
-    <?php include 'footer.php'; ?>
+    <?php include('include/footer.php'); ?>
+    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
+
 </html>
