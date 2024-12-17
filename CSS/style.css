@@ -129,3 +129,20 @@ footer ul li a:hover {
     background-color: white;
     color: #F37038;
 }
+
+/* page admin */
+.form-control {
+    border-color: #F37038;
+    text-align: center;
+    padding: 15px;
+    max-width: 70%;
+}
+
+.form-control:focus {
+    border-color: #F37038;;
+    box-shadow: 0 0 5px #F37038;;
+}
+
+.form-control::placeholder {
+    font-weight: bold;
+}
