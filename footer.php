@@ -1,11 +1,11 @@
-<footer class="py-5">
+<footer class="py-5 mt-5">
     <div class="container">
         <div class="row align-items-center text-md-start">
             
             <!-- Logo -->
             <div class="col-12 col-md-4 mb-3">
                 <a href="index.php">
-                    <img src="LOGO/LOGO-Entier/blanc.png" alt="logo" class="img-fluid mx-auto d-block d-md-inline">
+                    <img src="images/logo-entier-blanc.png" alt="logo" class="img-fluid mx-auto d-block d-md-inline">
                 </a>
             </div>
 
