@@ -19,6 +19,7 @@ $nbAdherent = count($tableauAdherent);
 
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -26,6 +27,7 @@ $nbAdherent = count($tableauAdherent);
     <title>Adhérents</title>
     <meta name="description" content="Liste des adhérents et leurs informations.">
 </head>
+
 <body>
     <h1>Liste des adhérents</h1>
     <h2 id="intituleadherent">Sélectionnez un adhérent pour plus d'informations :</h2>
@@ -45,20 +47,20 @@ $nbAdherent = count($tableauAdherent);
         </select>
     </form>
 
- <!-- template Mustache -->
-   <!-- infos qui s'affichent en haut -->
-<script id="templateadherent" type="text/html">
-    <ul>
-        <li>Date d'inscription : {{date_inscription}}</li>
-        <li>Email : {{email}}</li>
-        <li>Type d'adhésion : {{type_adhesion}}</li>
-    </ul>
-    
-    <button id="btnSupprimer" data-id="{{id_adherent}}">Supprimer cet adhérent</button>
-    </script>
+    <!-- template Mustache -->
+    <!-- infos qui s'affichent en haut -->
+    <script id="templateadherent" type="text/html">
+        <ul>
+            <li>Date d'inscription : {{date_inscription}}</li>
+            <li>Email : {{email}}</li>
+            <li>Type d'adhésion : {{type_adhesion}}</li>
+        </ul>
 
+        <button id="btnSupprimer" data-id="{{id_adherent}}">Supprimer cet adhérent</button>
+    </script>
 
     <script src="js/mustache.min.js"></script>
     <script src="js/script2.js"></script>
 </body>
+
 </html>

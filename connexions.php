@@ -5,12 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Connextez-vous</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="CSS/formulaire.css">
     <link rel="stylesheet" href="CSS/style.css">
 </head>
 
 <body>
-<?php include('menu.php'); ?>
+<?php include('include/menu.php'); ?>
 
 <main class="main-form">
 <div class="form-container">
@@ -30,7 +29,7 @@
 </div>
 </main>
 
-<?php include('footer.php'); ?>
+<?php include('include/footer.php'); ?>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

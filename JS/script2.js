@@ -3,7 +3,6 @@ function viderDivRessources() {
     document.getElementById('divadherent').innerHTML = "";
 }
 
-
 function chargerInfosAdherent() {
     let idAdherent = this.value;
 
@@ -28,7 +27,6 @@ function chargerInfosAdherent() {
     };
     xhttp.send();
 }
-
 
 function supprimerAdherent() {
     console.log(this);
@@ -59,14 +57,8 @@ function supprimerAdherent() {
     xhttp.send("idadherent=" + idAdherent);
 }
 
-
-
-
-
 function init() {
-
     document.getElementById('selectAdherent').addEventListener('click', chargerInfosAdherent);
 
 }
-
 window.addEventListener('load', init);

@@ -1,14 +1,20 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Préférences</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="pref.css"> <!-- Le CSS externe -->
+    <link rel="stylesheet" href="CSS/style.css">
 </head>
+
 <body>
+
+    <?php include('include/menu.php'); ?>
+
+
     <div class="container mt-5">
         <div class="card shadow-lg mx-auto p-4" style="max-width: 600px; border-radius: 20px;">
             <h2 class="text-center mb-4 fw-bold">Sélectionnez vos préférences</h2>
@@ -56,20 +62,9 @@
         </div>
     </div>
 
-    <!-- Script JS -->
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const preferenceCards = document.querySelectorAll(".preference-card");
+    <?php include('include/footer.php'); ?>
 
-            preferenceCards.forEach(card => {
-                card.addEventListener("click", () => {
-                    // Inverse l'état de sélection
-                    const isSelected = card.getAttribute("data-selected") === "true";
-                    card.setAttribute("data-selected", !isSelected);
-                    card.classList.toggle("selected", !isSelected);
-                });
-            });
-        });
-    </script>
+    <script src="JS/preference.js"></script>
 </body>
+
 </html>
