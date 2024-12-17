@@ -6,7 +6,7 @@
     <title>Préférences</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="pref.css"> <!-- Le CSS externe -->
+    <link rel="stylesheet" href="css/pref.css"> <!-- Le CSS externe -->
 </head>
 <body>
     <div class="container mt-5">
