@@ -134,6 +134,61 @@ footer ul li a:hover {
     background-color: rgba(0, 0, 0, 0.5);
 }
 
+.form-control:focus {
+    border-color: #F37038;;
+    box-shadow: 0 0 5px #F37038;;
+}
+
+.form-control::placeholder {
+    font-weight: bold;
+}
+
+
+/*page pref*/
+.container {
+    padding-bottom: 5%;
+}
+.case-pref {
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 10%;
+    border: 2x solid transparent;
+    transition: all 0.1s ease;
+    cursor: pointer;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Ombre plus sombre */
+}
+
+.case-pref i {
+    color: #333; /* Couleur des icônes */
+    transition: color 0.1s ease;
+}
+
+/* Effet hover (survol) */
+.case-pref:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.4); /* Ombre plus sombre au survol */
+}
+
+/* Effet sélectionné */
+.case-pref.selected {
+    border: 3px solid #F37038; /* Contour orange */
+    box-shadow: 0 0 15px #F37038; /* Ombre orange plus marquée */
+    transform: scale(1.05); /* Zoom */
+}
+
+/* Bouton Valider */
+.btn-outline-pref {
+    border: 2px solid #F37038;
+    color: #F37038;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+}
+
+.btn-outline-pref:hover {
+    background-color: #F37038;
+    color: #fff;
+}
+=======
 .icon-nav-tel img{
     width: 40%;
 }
