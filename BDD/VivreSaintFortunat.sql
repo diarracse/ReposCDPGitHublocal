@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost:8889
--- Généré le : mar. 17 déc. 2024 à 10:21
+-- Généré le : mar. 17 déc. 2024 à 13:31
 -- Version du serveur : 8.0.35
 -- Version de PHP : 8.2.20
 
@@ -36,7 +36,7 @@ CREATE TABLE `Adherent` (
   `mot_de_passe` varchar(255) NOT NULL,
   `date_inscription` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `image` varchar(10) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Déchargement des données de la table `Adherent`
@@ -68,7 +68,7 @@ CREATE TABLE `Admin` (
   `prenom` varchar(40) NOT NULL,
   `email` varchar(30) NOT NULL,
   `mot_de_passe` varchar(30) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Déchargement des données de la table `Admin`
@@ -92,7 +92,7 @@ CREATE TABLE `Evenement` (
   `id_type` int NOT NULL,
   `date_ajout` datetime DEFAULT CURRENT_TIMESTAMP,
   `image` varchar(10) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Déchargement des données de la table `Evenement`
@@ -118,7 +118,7 @@ CREATE TABLE `Participation` (
   `id_evenement` int NOT NULL,
   `id_adherent` int NOT NULL,
   `date_participation` datetime DEFAULT CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Déchargement des données de la table `Participation`
@@ -139,7 +139,7 @@ CREATE TABLE `Preference` (
   `id_preference` int NOT NULL,
   `id_adherent` int NOT NULL,
   `id_type` int NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Déchargement des données de la table `Preference`
@@ -160,7 +160,7 @@ INSERT INTO `Preference` (`id_preference`, `id_adherent`, `id_type`) VALUES
 CREATE TABLE `TypeEvenement` (
   `id_type` int NOT NULL,
   `nom_type` varchar(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Déchargement des données de la table `TypeEvenement`
