@@ -13,11 +13,15 @@
 
 <body>
     <?php include('menu.php'); ?>
+    <div class="text-center mt-5">
+        <h2>Nous contacter</h2>
+
+        <p class="grand-text">Indiquez-nous ce que vous pensez de notre site Web, de notre Association ou de nos activités.Si vous nous communiquez vos coordonnées, nous serons en mesure de vous contacter pour apporter une réponse personnalisée</p>
+    </div>
 
     <main class="main-form">
         <div class="form-container w-75">
 
-            <h2>Nous contacter</h2>
             <form>
                 <div class="d-flex w-100 gap-4">
                     <div class="form-group w-50">
@@ -38,7 +42,7 @@
                     <textarea type="textarea" id="message" class="form-control" required placeholder="Votre message"></textarea>
                 </div>
                 <button type="submit" class="btn-primary">Envoyer</button>
-                <p class="mt-3">Vous avez déjà un compte ? <a href="connexions.php">Se connecter</a></p>
+                <p class="petit-text">Les informations recueillies via ce formulaire sont enregistrées pour répondre à votre demande. Elles ne seront ni partagées, ni revendues.</p>
             </form>
 
         </div>
