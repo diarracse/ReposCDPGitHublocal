@@ -5,7 +5,7 @@
             <!-- Logo -->
             <div class="col-12 col-md-4 mb-3">
                 <a href="index.php">
-                    <img src="images/logo-entier-blanc.png" alt="logo" class="img-fluid mx-auto d-block d-md-inline">
+                    <img src="images/logo-entier-blanc.png" alt="logo" class="img-fluid mx-auto d-block d-md-inline pe-md-5">
                 </a>
             </div>
 
@@ -21,7 +21,7 @@
             </div>
 
             <!-- INFORMATIONS -->
-            <div class="col-12 col-md-4 mb-3">
+            <div class="col-12 col-md-4 mb-3 mb-5 mb-md-0">
                 <h5 class="text-white fw-bold">INFORMATIONS</h5>
                 <ul class="list-unstyled mb-0">
                     <li><a href="plandusite.php" class="text-white ">Plan du site</a></li>

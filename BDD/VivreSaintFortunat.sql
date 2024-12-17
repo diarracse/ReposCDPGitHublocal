@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost:8889
--- Généré le : ven. 13 déc. 2024 à 13:24
+-- Généré le : mar. 17 déc. 2024 à 10:21
 -- Version du serveur : 8.0.35
 -- Version de PHP : 8.2.20
 
@@ -33,7 +33,7 @@ CREATE TABLE `Adherent` (
   `prenom` varchar(40) NOT NULL,
   `email` varchar(30) NOT NULL,
   `type_adhesion` enum('Individuel','Famille','Mineur') NOT NULL,
-  `mot_de_passe` varchar(30) NOT NULL,
+  `mot_de_passe` varchar(255) NOT NULL,
   `date_inscription` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `image` varchar(10) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
@@ -44,7 +44,17 @@ CREATE TABLE `Adherent` (
 
 INSERT INTO `Adherent` (`id_adherent`, `nom`, `prenom`, `email`, `type_adhesion`, `mot_de_passe`, `date_inscription`, `image`) VALUES
 (1, 'Dupont', 'Jean', 'jean.dupont@example.com', 'Individuel', 'motdepasse1', '2024-12-10 12:58:52', NULL),
-(2, 'Durand', 'Marie', 'marie.durand@example.com', 'Individuel', 'motdepasse2', '2024-12-10 12:58:52', NULL);
+(2, 'Durand', 'Marie', 'marie.durand@example.com', 'Individuel', 'motdepasse2', '2024-12-10 12:58:52', NULL),
+(4, 'Lemine', 'Sophie', 'sophie.lemine@example.com', 'Mineur', 'motdepasse4', '2024-12-16 11:58:52', NULL),
+(5, 'Gavine', 'Paul', 'paul.gavine@example.com', 'Individuel', 'motdepasse5', '2024-12-16 11:58:52', NULL),
+(6, 'Ferrier', 'Jean-Christophe', 'jeanchrist.ferrier@example.com', 'Individuel', 'motdepasse6', '2024-12-16 11:58:52', NULL),
+(7, 'Perrier', 'Capucine', 'capucine.perrier@example.com', 'Individuel', 'motdepasse7', '2024-12-16 18:51:02', NULL),
+(8, 'Allirol', 'Marc', 'marc.allirol@example.com', 'Mineur', 'motdepasse8', '2024-12-16 17:28:32', NULL),
+(10, 'trigon', 'pablo', 'pablotrigon@gmail.com', 'Individuel', '$2y$10$Pk/Tza1REhSZlNxhxd04jutXbCun2jtgoaXmpE.I1Y4Qv.131PCmu', '2024-12-16 20:32:37', NULL),
+(12, 'testttt', 'testtt', 'testttt@yettt.com', 'Mineur', '$2y$10$sFl3X.FG4a2quE9ikhNVS.3rryE1WtpJlJcQVOzSDfaWRmdq/qOhG', '2024-12-16 20:39:22', NULL),
+(13, 'testttttt', 'testttttt', 'tetstttt@gmail.com', 'Famille', '$2y$10$/obsgTEERuXMyrRf1WdzR.9TOYV3S7tdHs307XPqJRFaS.kWY.VKm', '2024-12-16 20:40:47', NULL),
+(14, 'tetsttttt', 'txvvdgg', 'gyvfch@gmail.com', 'Mineur', '$2y$10$RVRw3qKXK/AD2Awm0tMvCe0TLOIsZf3pn7GjYp0U4gJVIS7SyTk/e', '2024-12-16 20:42:31', NULL),
+(15, 'aaaaaa', 'aaaaaa', 'aaaaa@gmail.com', 'Mineur', '$2y$10$V/lez7GrzTYNiJfuJyHs6.16vcG.kt4jah5pZMFqLuQL7Bw6T98iC', '2024-12-16 20:44:49', NULL);
 
 -- --------------------------------------------------------
 
@@ -94,7 +104,6 @@ INSERT INTO `Evenement` (`id_evenement`, `titre`, `description`, `lieu`, `date_e
 (3, 'Journée Culturelle', 'Un événement pour découvrir des œuvres locales.', 'Saint-Fortunat', '2024-12-10', 1, '2024-12-10 13:58:52', 'img-event3'),
 (4, 'Visite Patrimoine', 'Découverte des monuments historiques de la région.', 'Clermont-Ferrand', '2024-12-18', 5, '2024-12-10 13:58:52', 'img-event4'),
 (5, 'Atelier de Découverte', 'Atelier interactif pour petits et grands.', 'Annecy', '2024-12-12', 2, '2024-12-10 13:58:52', 'img-event5'),
-(6, 'test', 'test', 'test', '2024-12-13', 1, '2024-12-13 11:23:26', 'testimage'),
 (7, 'Sport', 'Sport', 'Sport', '2024-12-13', 6, '2024-12-13 11:56:09', 'Sport'),
 (8, 'Sport', 'Sport', 'Sport', '2024-12-13', 6, '2024-12-13 14:15:37', 'Sport');
 
@@ -220,7 +229,7 @@ ALTER TABLE `TypeEvenement`
 -- AUTO_INCREMENT pour la table `Adherent`
 --
 ALTER TABLE `Adherent`
-  MODIFY `id_adherent` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_adherent` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT pour la table `Admin`

@@ -15,7 +15,7 @@
 
 
     <header>
-        <img class="position-absolute z-3 top-50 start-50 translate-middle w-50 logo-entier" src="images/logo-entier-blanc.png" alt="logo-entier-blanc">
+        <img class="position-absolute z-3 top-50 start-50 translate-middle w-75 px-md-5" src="images/logo-entier-blanc.png" alt="logo-entier-blanc">
 
 
         <a href="connexion.php">
@@ -29,7 +29,7 @@
 
 
 
-        <nav class="navbar z-3 position-absolute fixed-bottom w-100 sticky-element">
+        <nav class="navbar z-3 position-absolute fixed-bottom w-100 d-md-block d-none">
             <div class="container justify-content-center">
                 <a class="navbar-brand text-light mx-4" href="index.php">Accueil</a>
                 <a class="navbar-brand text-light mx-4" href="adhesion.php">Adhésion</a>
@@ -38,12 +38,16 @@
             </div>
         </nav>
 
+        <?php include 'menu-telephone.php'; ?>
+
+
+
 
 
         <div class="image-fond position-relative z-2">
         </div>
 
-        <div class="z-1 fixed-top degrade-nav">
+        <div class="z-1 fixed-top degrade-nav  d-md-block d-none">
         </div>
 
     </header>
@@ -114,58 +118,54 @@
         <div class="d-flex flex-column align-items-center">
 
             <h2 class="mt-5 mb-0">Évènements</h2>
-            <a class="text-orange" href="evenement.php"><p class="text-end">Voir tout ></p></a>
+            <a class="text-orange mb-4" href="evenement.php">
+                <p class="text-end">Voir tout ></p>
+            </a>
 
 
         </div>
 
         <div id="carouselExampleIndicators" class="carousel slide container">
-  <div class="carousel-indicators">
-    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-  </div>
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img src="images/image-accueil.jpg" class="d-block w-100" alt="...">
-    </div>
-    <div class="carousel-item active">
-      <img src="images/image-accueil.jpg" class="d-block w-100" alt="...">
-    </div>
-    <div class="carousel-item active">
-      <img src="images/image-accueil.jpg" class="d-block w-100" alt="...">
-    </div>
-  </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
-</div>
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="images/image-accueil.jpg" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item active">
+                    <img src="images/image-accueil.jpg" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item active">
+                    <img src="images/image-accueil.jpg" class="d-block w-100" alt="...">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
 
 
-        <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <div class="d-flex justify-content-center">
+            <a class="mt-5 mb-3 CTA" href="description_evenement.php?id=<?php echo $evenement['id_evenement']; ?> ">Découvrir l'évènement</a>
+        </div>
+    </section>
+
+
+
+    <?php include 'footer.php'; ?>
 
 
     </section>
 
-    <script>
-        document.addEventListener('scroll', () => {
-            const navbar = document.querySelector('.navbar');
-            const rect = navbar.getBoundingClientRect();
-
-            if (rect.top <= 0) {
-                navbar.classList.remove('fixed-bottom');
-                navbar.classList.add('position-fixed');
-            } else {
-                navbar.classList.remove('position-fixed');
-                navbar.classList.add('fixed-bottom');
-            }
-        });
-    </script>
+    <script src="JS/navbar.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
