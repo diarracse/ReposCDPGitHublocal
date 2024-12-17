@@ -45,8 +45,8 @@ $nbAdherent = count($tableauAdherent);
         </select>
     </form>
 
- <!-- template Mustache -->
-   <!-- infos qui s'affichent en haut -->
+<!-- template Mustache -->
+<!-- infos qui s'affichent en haut -->
 <script id="templateadherent" type="text/html">
     <ul>
         <li>Date d'inscription : {{date_inscription}}</li>
