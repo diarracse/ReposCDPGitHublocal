@@ -4,7 +4,7 @@ $pageActive = basename($_SERVER['PHP_SELF']);
 ?>
 
 <!-- menu -->
-<nav class="menu">
+<nav class="menu fixed-top d-md-block d-none">
     <ul>
         <li><a href="index.php" class="<?= ($pageActive == 'index.php') ? 'active' : '' ?>">Accueil</a></li>
         <li><a href="adhesion.php" class="<?= ($pageActive == 'adhesion.php') ? 'active' : '' ?>">Adhésion</a></li>
@@ -12,3 +12,5 @@ $pageActive = basename($_SERVER['PHP_SELF']);
         <li><a href="contact.php" class="<?= ($pageActive == 'contact.php') ? 'active' : '' ?>">Contact</a></li>
     </ul>
 </nav>
+
+<?php include 'menu-telephone.php'; ?>
