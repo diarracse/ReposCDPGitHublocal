@@ -1,23 +1,3 @@
-<?php
-include("config/config.php");
-
-try {
-    $dbh = new PDO($dsn, $user, $password);
-    $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-} catch (PDOException $e) {
-    echo 'Échec lors de la connexion : ' . htmlspecialchars($e->getMessage());
-    exit;
-}
-
-$requete = 'SELECT * FROM Adherent ORDER BY nom, prenom';
-$resultats = $dbh->query($requete);
-$tableauAdherent = $resultats->fetchAll(PDO::FETCH_ASSOC);
-$resultats->closeCursor();
-
-$nbAdherent = count($tableauAdherent);
-?>
-
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -26,15 +6,11 @@ $nbAdherent = count($tableauAdherent);
     <script src="JS/AjoutEvenement.js"></script>
     <title>Page Admin</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="CSS/style.css">
-    <script src="js/mustache.min.js"></script>
-    <script src="js/script2.js"></script>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
     <?php include 'menu.php'; ?>
-
-    <!-- Afficher un évènement -->
 
     <form id="formEvenement" class="container p-5 my-5 shadow rounded-5">
 
@@ -72,9 +48,6 @@ $nbAdherent = count($tableauAdherent);
 
         <button type="submit" class="CTA">Ajouter l'Événement</button>
     </form>
-
-    <!-- Afficher un adhérent -->
-    
 
 
     <?php include 'footer.php'; ?>
