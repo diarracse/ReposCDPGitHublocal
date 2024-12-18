@@ -48,13 +48,7 @@
                     <label for="confirm-password">Confirmer mot de passe</label>
                     <input type="password" name="mot_de_passe_confirmation" id="confirm-password" class="form-control" required placeholder="Confirmer votre mot de passe">
 
-                    <label for="type-adhesion">Type d'adhésion</label>
-                    <select id="type-adhesion" class="form-control">
-                        <option value="" disabled selected>Choisissez une option</option>
-                        <option>individuel</option>
-                        <option>Familial</option>
-                        <option>Mineur</option>
-                    </select>
+                  
                 </div>
                
                <button type="submit" class="CTA">Envoyer</button>
