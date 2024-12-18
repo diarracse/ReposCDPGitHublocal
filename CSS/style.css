@@ -310,12 +310,3 @@ textarea {
 .p-orange {
     color: #F37038;
 }
-
-.truncate {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    line-clamp: 3;
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-}
