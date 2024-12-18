@@ -14,7 +14,7 @@
                 <h5 class="text-white fw-bold">ADRESSE</h5>
                 <address class="text-white mb-0">
                     Mairie<br>
-                    Téléphone : <a href="tel:+33614136544" class="text-decoration-none text-white fw-bold">01 23 45 67 89</a><br>
+                    Téléphone : <a href="tel:+33123456789" class="text-decoration-none text-white fw-bold">01 23 45 67 89</a><br>
                     SAINT-DIDIER-AU-MONT-D'OR<br>
                     69370, France<br>
                 </address>
