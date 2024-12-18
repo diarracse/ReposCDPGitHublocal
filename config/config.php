@@ -1,11 +1,13 @@
-<?php 
-$host='localhost';
-$port=8888;
-$dbname='VivreSaintFortunat';
-$user='root';
-$password='root';
+<?php
+// Configuration de la base de données
+$host = 'localhost';
+$dbname = 'VivreSaintFortunat';
+$username = 'root';
+$password = 'root';
 
-$dsn='mysql:host='.$host.';port='.$port.';dbname='.$dbname;
-
-$bdd = new PDO("mysql:host=$host;port=$port;dbname=$dbname", $user, $password);
-?>
+try {
+    $pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8", $username, $password);
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+} catch (PDOException $e) {
+    die("Erreur de connexion à la base de données : " . $e->getMessage());
+}
