@@ -32,29 +32,29 @@ footer ul li a:hover {
     padding: 15px 0;
 }
 
-.menu ul {
+.menu ul, .menu-index ul{
     list-style: none;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.menu ul li {
+.menu ul li, .menu-index ul li {
     margin: 0 15px;
 }
 
-.menu ul li a.active {
-    color: #1e1e1c;
+.menu ul li a.active, .menu-index ul li a.active {
+    text-decoration: underline;
 }
 
-.menu ul li a {
+.menu ul li a, .menu-index ul li a {
     color: #ffffff;
     text-decoration: none;
     transition: color 0.3s;
 }
 
-.menu ul li a:hover {
-    color: #1e1e1c;
+.menu ul li a:hover, .menu-index ul li a:hover {
+    font-weight: bold;
 }
 
 .p-justify{
@@ -65,13 +65,16 @@ footer ul li a:hover {
 
 .icon-nav-tel{
     padding: 10px 0;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.6);
 }
 
 .icon-nav-tel img{
-    width: 40%;
+    width: 35%;
 }
 
+.description-tel div p {
+    font-size: 2vw;
+}
 /*Les boutons */
 
 .CTA{
@@ -107,10 +110,42 @@ footer ul li a:hover {
     color: #F37038;
 }
 
+.CTA-events{
+    border: 2px solid #F37038;
+    border-radius: 30px;
+    text-decoration: none;
+    color: #F37038;
+    padding: 10px 10%;
+    margin: 10px 0;
+    transition: 0.5s ease;
+    background-color: white;
+}
+
+.CTA-events:hover{
+    background-color: #F37038;
+    color: white;
+}
+
+.CTA-events-annule{
+    border: 2px solid #ff0000;
+    border-radius: 100px;
+    text-decoration: none;
+    color: #ffffff;
+    padding: 10px 17px;
+    margin: 10px 0;
+    transition: 0.5s ease;
+    background-color: #ff0000;
+}
+
+.CTA-events-annule:hover{
+    background-color: #ffffff;
+    color: red;
+}
+
 /*Page accueil*/
 
 .image-fond {
-    background-image: url('../images/image-accueil.jpg');
+    background-image: url('../images/accueil/image-accueil.jpg');
     background-size: cover;
     background-position: center;
     height: 100vh;
@@ -345,4 +380,14 @@ textarea {
 /* Page admin */
 #formModifierEvenement {
     display: none;
+}
+
+/*page evenement*/
+
+.img-evenement { 
+    border-radius: 0 30px 30px 30px;
+}
+
+.p-orange {
+    color: #F37038;
 }
