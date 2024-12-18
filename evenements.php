@@ -2,17 +2,12 @@
 
 include('config/config.php');
 
-$bdd = new PDO("mysql:host=$host;port=$port;dbname=$dbname", $user, $password);
-
 $requete = 'SELECT * FROM Evenement ORDER BY date_evenement DESC';
 $resultats = $bdd->query($requete);
 $evenements = $resultats->fetchAll(PDO::FETCH_ASSOC);
 $resultats->closeCursor();
 
 ?>
-
-
-
 
 <!DOCTYPE html>
 <html lang="fr">
