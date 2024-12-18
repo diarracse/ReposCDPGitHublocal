@@ -17,21 +17,23 @@
             <div class="d-flex justify-content-end">
                 <div class="position-absolute z-3 d-flex align-items-center m-3">
                     <p class="mb-0 me-3 d-md-block d-none text-light">Se connecter</p>
-                    <img class="photo-profil" src="images/profil.png" alt="">
+                    <img class="photo-profil  d-md-block d-none" src="images/profil.png" alt="">
                 </div>
             </div>
         </a>
 
-        <nav class="navbar z-3 position-absolute fixed-bottom w-100 d-md-block d-none">
-            <div class="container justify-content-center">
-                <a class="navbar-brand text-light mx-4" href="index.php">Accueil</a>
-                <a class="navbar-brand text-light mx-4" href="adhesion.php">Adhésion</a>
-                <a class="navbar-brand text-light mx-4" href="evenement.php">Évènements</a>
-                <a class="navbar-brand text-light mx-4" href="contact.php">Contact</a>
+        <nav class="mt-2 navbar z-3 position-absolute fixed-bottom w-100 d-md-block d-none">
+            <div class="menu-index container justify-content-center">
+                <ul>
+                    <li><a href="index.php" class="<?= ($pageActive == 'index.php') ? 'active' : '' ?>">Accueil</a></li>
+                    <li><a href="adhesion.php" class="<?= ($pageActive == 'adhesion.php') ? 'active' : '' ?>">Adhésion</a></li>
+                    <li><a href="evenements.php" class="<?= ($pageActive == 'evenements.php') ? 'active' : '' ?>">Évènements</a></li>
+                    <li><a href="contact.php" class="<?= ($pageActive == 'contact.php') ? 'active' : '' ?>">Contact</a></li>
+                </ul>
             </div>
         </nav>
 
-        <?php include ('include/menu-telephone.php'); ?>
+        <?php include('include/menu-telephone.php'); ?>
 
         <div class="image-fond position-relative z-2">
         </div>
@@ -57,7 +59,7 @@
                 </p>
             </div>
             <div class="col-lg-6">
-                <img class="w-100" src="images/Ville-presentation.png" alt="">
+                <img class="w-100" src="images/accueil/Ville-presentation.png" alt="">
             </div>
         </div>
     </section>
@@ -66,17 +68,17 @@
         <div class="container py-5">
             <div class="row mt-5">
                 <div class="col-md-4 d-flex flex-column align-items-center mb-5">
-                    <img class="mb-4" src="images/annee.png" alt="">
+                    <img class="mb-4" src="images/accueil/annee.png" alt="">
                     <p class="text-light fs-3 fw-bold">22 ans</p>
                     <p class="text-light">Années d'existence</p>
                 </div>
                 <div class="col-md-4 d-flex flex-column align-items-center mb-5">
-                    <img class="mb-4" src="images/people.png" alt="">
+                    <img class="mb-4" src="images/accueil/people.png" alt="">
                     <p class="text-light fs-3 fw-bold">100+</p>
                     <p class="text-light">Adhérents</p>
                 </div>
                 <div class="col-md-4 d-flex flex-column align-items-center mb-5">
-                    <img class="mb-4" src="images/events.png" alt="">
+                    <img class="mb-4" src="images/accueil/events.png" alt="">
                     <p class="text-light fs-3 fw-bold">500</p>
                     <p class="text-light">Évènements organisées</p>
                 </div>
@@ -90,7 +92,7 @@
     <section>
         <div class="d-flex flex-column align-items-center">
             <h2 class="mt-5 mb-0">Évènements</h2>
-            <a class="text-orange mb-4" href="evenement.php">
+            <a class="text-orange mb-4" href="evenements.php">
                 <p class="text-end">Voir tout ></p>
             </a>
         </div>
@@ -102,13 +104,13 @@
             </div>
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="images/image-accueil.jpg" class="d-block w-100" alt="...">
+                    <img src="images/accueil/image-accueil.jpg" class="d-block w-100" alt="...">
                 </div>
                 <div class="carousel-item active">
-                    <img src="images/image-accueil.jpg" class="d-block w-100" alt="...">
+                    <img src="images/accueil/image-accueil.jpg" class="d-block w-100" alt="...">
                 </div>
                 <div class="carousel-item active">
-                    <img src="images/image-accueil.jpg" class="d-block w-100" alt="...">
+                    <img src="images/accueil/image-accueil.jpg" class="d-block w-100" alt="...">
                 </div>
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
