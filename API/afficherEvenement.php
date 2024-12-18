@@ -2,15 +2,15 @@
 include("../config/config.php");
 
 try {
-    $dbh = new PDO($dsn, $user, $password);
-    $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $pdo = new PDO($dsn, $user, $password);
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     if (isset($_GET['idevenement'])) {
         $idEvenement = intval($_GET['idevenement']);
         $sql = "SELECT id_evenement, titre, description, date_evenement, lieu 
                 FROM Evenement 
                 WHERE id_evenement = :id";
-        $stmt = $dbh->prepare($sql);
+        $stmt = $pdo->prepare($sql);
         $stmt->bindParam(':id', $idEvenement, PDO::PARAM_INT);
         $stmt->execute();
 

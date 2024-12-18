@@ -4,7 +4,7 @@ include("config/config.php");
 
 
 $requete = 'SELECT * FROM Adherent ORDER BY nom, prenom';
-$resultats = $dbh->query($requete);
+$resultats = $pdo->query($requete);
 $tableauAdherent = $resultats->fetchAll(PDO::FETCH_ASSOC);
 $resultats->closeCursor();
 

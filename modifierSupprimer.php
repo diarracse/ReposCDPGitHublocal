@@ -2,7 +2,7 @@
 include("config/config.php");
 
 $requete = 'SELECT * FROM Evenement ORDER BY date_evenement';
-$resultats = $dbh->query($requete);
+$resultats = $pdo->query($requete);
 $tableauEvenement = $resultats->fetchAll(PDO::FETCH_ASSOC);
 $resultats->closeCursor();
 ?>

@@ -4,13 +4,13 @@ include("config/config.php");
 
 // requête pour les évènements
 $requete = 'SELECT * FROM Evenement ORDER BY date_evenement';
-$resultats = $dbh->query($requete);
+$resultats = $pdo->query($requete);
 $tableauEvenement = $resultats->fetchAll(PDO::FETCH_ASSOC);
 $resultats->closeCursor();
 
 // requête afficher les adhérents
 $requete = 'SELECT * FROM Adherent ORDER BY nom, prenom';
-$resultats = $dbh->query($requete);
+$resultats = $pdo->query($requete);
 $tableauAdherent = $resultats->fetchAll(PDO::FETCH_ASSOC);
 $resultats->closeCursor();
 
