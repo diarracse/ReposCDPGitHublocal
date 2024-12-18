@@ -59,7 +59,7 @@ $resultats->closeCursor();
             <?php foreach ($evenements as $evenement) : ?>
 
                 <div class="col-md-6 col-12 my-4 px-4">
-                    <a class="text-decoration-none text-dark" href="description-evenement.php?id=<?php echo $evenement['id_evenement'] ?>">
+                    <a class="text-decoration-none text-dark" href="description_evenement.php?id_evenement=<?php echo $evenement['id_evenement'] ?>">
                         <h2><?php echo $evenement['titre'] ?></h2>
                         <p class="p-orange">publié le <?php echo $evenement['date_evenement'] ?></p>
                         <img class="w-100 img-evenement shadow" src="images/evenement/<?php echo $evenement['image'] ?>" alt="">
