@@ -341,3 +341,8 @@ textarea {
     -webkit-box-orient: vertical;
 
 }
+
+/* Page admin */
+#formModifierEvenement {
+    display: none;
+}
