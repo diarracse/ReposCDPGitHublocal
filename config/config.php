@@ -8,5 +8,4 @@ $user='root';
 $password='root';
 
 
-$dsn='mysql:host='.$host.';port='.$port.';dbname='.$dbname;
 ?>
