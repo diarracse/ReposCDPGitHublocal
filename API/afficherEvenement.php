@@ -2,9 +2,6 @@
 include("../config/config.php");
 
 try {
-    $pdo = new PDO($dsn, $user, $password);
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
     if (isset($_GET['idevenement'])) {
         $idEvenement = intval($_GET['idevenement']);
         $sql = "SELECT id_evenement, titre, description, date_evenement, lieu 
