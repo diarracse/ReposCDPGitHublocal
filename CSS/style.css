@@ -57,7 +57,7 @@ footer ul li a:hover {
     color: #1e1e1c;
 }
 
-.p-adhesion{
+.p-justify{
     text-align: justify;
 }
 
@@ -264,7 +264,6 @@ textarea {
     box-shadow: 0 0 15px rgba(240, 84, 35, 0.7); /* Ombre orange plus marquée */
     transform: scale(1.05); /* Zoom */
 }
-
 /*page profil*/
 .profil-container {
     display: flex;
@@ -331,4 +330,14 @@ textarea {
         font-size: 0.8rem;
         padding: 5px 8px;
     }
+}
+
+.truncate {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-clamp: 3;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+
 }
