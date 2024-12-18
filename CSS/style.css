@@ -29,7 +29,7 @@ footer ul li a:hover {
 /* le menu */
 .menu {
     background-color: #F37038;
-    padding: 15px 0;
+    padding: 16px 0 1px 0;
 }
 
 .menu ul, .menu-index ul{
