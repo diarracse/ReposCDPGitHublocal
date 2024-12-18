@@ -1,18 +1,17 @@
 <?php
 include("config/config.php");
-$bdd = new PDO('mysql:host=' . $host . ';port=' . $port . ';dbname=' . $dbname, $user, $password);
 
 
 // recupération des données
 $requete = 'SELECT * FROM evenement WHERE id_evenement = ' . $_GET['id_evenement'];
 
-$resultats = $bdd->query($requete);
+$resultats = $pdo->query($requete);
 $tabEvenement = $resultats->fetch(PDO::FETCH_ASSOC);
 $resultats->closeCursor();
 
 $requete = 'SELECT * FROM evenement WHERE id_type = ' . $tabEvenement['id_type'];
 
-$resultats = $bdd->query($requete);
+$resultats = $pdo->query($requete);
 $tabType = $resultats->fetchAll(PDO::FETCH_ASSOC);
 $resultats->closeCursor();
 

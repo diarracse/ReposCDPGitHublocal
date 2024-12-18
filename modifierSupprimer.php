@@ -1,16 +1,8 @@
 <?php
 include("config/config.php");
 
-try {
-    $dbh = new PDO($dsn, $user, $password);
-    $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-} catch (PDOException $e) {
-    echo 'Échec lors de la connexion : ' . htmlspecialchars($e->getMessage());
-    exit;
-}
-
 $requete = 'SELECT * FROM Evenement ORDER BY date_evenement';
-$resultats = $dbh->query($requete);
+$resultats = $pdo->query($requete);
 $tableauEvenement = $resultats->fetchAll(PDO::FETCH_ASSOC);
 $resultats->closeCursor();
 ?>

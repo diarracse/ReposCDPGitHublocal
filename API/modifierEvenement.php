@@ -3,8 +3,8 @@
 include("../config/config.php");
 
 try {
-    $dbh = new PDO($dsn, $user, $password);
-    $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $pdo = new PDO($dsn, $user, $password);
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     // Initialiser la réponse
     $response = array();
@@ -35,7 +35,7 @@ try {
                     image = :image 
                 WHERE id_evenement = :idEvenement";
 
-        $stmt = $dbh->prepare($sql);
+        $stmt = $pdo->prepare($sql);
 
         // Liaison des paramètres
         $stmt->bindParam(':titre', $titre, PDO::PARAM_STR);

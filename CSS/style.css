@@ -297,4 +297,52 @@ textarea {
 .profil-label {
     font-weight: bold;
     color: #f37038;
+
+}
+
+/* Préférences affichées sous forme de badges */
+.profil-preferences {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.profil-preferences li {
+    display: inline-block;
+    margin: 15px;
+    background-color: #f37038;
+    color: #fff;
+    padding: 8px 12px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    text-transform: capitalize;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsivité */
+@media (max-width: 768px) {
+    .profil-card {
+        padding: 20px;
+    }
+
+    .profil-preferences li {
+        font-size: 0.8rem;
+        padding: 5px 8px;
+    }
+}
+
+.truncate {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-clamp: 3;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+
+}
+
+/* Page admin */
+#formModifierEvenement {
+    display: none;
+
 }

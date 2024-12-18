@@ -2,8 +2,8 @@
 include("../config/config.php");
 
 try {
-    $dbh = new PDO($dsn, $user, $password);
-    $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $pdo = new PDO($dsn, $user, $password);
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 } catch (PDOException $e) {
     echo json_encode(['status' => 'error', 'message' => 'Erreur de connexion : ' . $e->getMessage()]);
     exit;
@@ -23,18 +23,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         try {
             // vérifier si ce type d'événement existe déjà
             $requeteType = "SELECT id_type FROM TypeEvenement WHERE nom_type = :nom_type";
-            $stmtType = $dbh->prepare($requeteType);
+            $stmtType = $pdo->prepare($requeteType);
             $stmtType->execute([':nom_type' => $nom_type]);
             $typeEvenement = $stmtType->fetch(PDO::FETCH_ASSOC);
 
             if (!$typeEvenement) {
                 // si il n'existe pas, on ajoute ce nv type avec un nouvel id dans la table TypeEvenement
                 $requeteInsertType = "INSERT INTO TypeEvenement (nom_type) VALUES (:nom_type)";
-                $stmtInsertType = $dbh->prepare($requeteInsertType);
+                $stmtInsertType = $pdo->prepare($requeteInsertType);
                 $stmtInsertType->execute([':nom_type' => $nom_type]);
 
                 // on récupère l'id du nv type crée
-                $id_type = $dbh->lastInsertId();
+                $id_type = $pdo->lastInsertId();
             } else {
                 $id_type = $typeEvenement['id_type'];
             }
@@ -42,7 +42,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             //  on insère le nv Evenement avec son id 
             $requete = "INSERT INTO Evenement (titre, description, lieu, id_type, date_evenement, image) 
                         VALUES (:titre, :description, :lieu, :id_type, :date_evenement, :image)";
-            $stmt = $dbh->prepare($requete);
+            $stmt = $pdo->prepare($requete);
             $stmt->execute([
                 ':titre' => $titre,
                 ':description' => $description,

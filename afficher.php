@@ -1,16 +1,10 @@
 <?php
 include("config/config.php");
 
-try {
-    $dbh = new PDO($dsn, $user, $password);
-    $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-} catch (PDOException $e) {
-    echo 'Échec lors de la connexion : ' . htmlspecialchars($e->getMessage());
-    exit;
-}
+
 
 $requete = 'SELECT * FROM Adherent ORDER BY nom, prenom';
-$resultats = $dbh->query($requete);
+$resultats = $pdo->query($requete);
 $tableauAdherent = $resultats->fetchAll(PDO::FETCH_ASSOC);
 $resultats->closeCursor();
 
