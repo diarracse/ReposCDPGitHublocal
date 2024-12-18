@@ -44,7 +44,7 @@
                         <option>Mineur</option>
                     </select>
                 </div>
-                <button type="submit" class="CTA">Envoyer</button>
+               <a href="preference.php"> <button type="submit" class="CTA">Envoyer</button></a>
                 <p class="mt-3">Vous avez déjà un compte ? <a href="connexions.php">Se connecter</a></p>
             </form>
         </div>
