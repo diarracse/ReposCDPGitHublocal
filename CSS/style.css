@@ -267,77 +267,34 @@ textarea {
 /*page profil*/
 .profil-container {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: center; /* Centre horizontalement */
+    align-items: center; /* Centre verticalement */
+    min-height: calc(100vh - 200px); /* Prend toute la hauteur de la page moins la hauteur du menu/footer */
+    padding: 20px; /* Ajout de padding pour éviter les débords */
+    background-color: #ffffff; /* Optionnel : couleur de fond */
 }
 
 .profil-card {
-    max-width: 800px;
+    max-width: 600px;
     width: 100%;
-    background-color: #ffffff;
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    text-align: center;
+    padding: 40px;
 }
 
-.profil-card h2 {
-    font-size: 250%;
-    font-weight: bold;
-    text-decoration: underline;
-    color: #f37038;
-}
-
-.profil-info {
-    text-align: left;
+.profil-title-img {
+    width: 120px; /* Ajuste la taille de l'image */
+    height: auto;
+    margin-bottom: 20px;
 }
 
 .profil-info p {
-    margin: 50px 0;
-    font-size: 150%;
+    margin: 25px 0;
+    font-size: 1.2rem;
+    color: #333;
 }
 
 .profil-label {
     font-weight: bold;
     color: #f37038;
-}
-
-/* Préférences affichées sous forme de badges */
-.profil-preferences {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.profil-preferences li {
-    display: inline-block;
-    margin: 15px;
-    background-color: #f37038;
-    color: #fff;
-    padding: 8px 12px;
-    border-radius: 20px;
-    font-size: 0.9rem;
-    text-transform: capitalize;
-    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
-}
-
-/* Responsivité */
-@media (max-width: 768px) {
-    .profil-card {
-        padding: 20px;
-    }
-
-    .profil-preferences li {
-        font-size: 0.8rem;
-        padding: 5px 8px;
-    }
-}
-
-.truncate {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    line-clamp: 3;
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-
 }

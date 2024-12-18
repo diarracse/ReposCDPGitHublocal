@@ -9,19 +9,20 @@
 </head>
 <body>
     <?php include('include/menu.php'); ?>
-
-    <div class="profil-container mt-5">
-        <div class="profil-card shadow-lg p-4">
-            <h2 class="text-center mb-4">Votre Profil</h2>
-            <div class="profil-info">
-                <p><span class="profil-label">Nom :</span>
-                <p><span class="profil-label">Prénom :</span>
-                <p><span class="profil-label">Email :</span>
-                <p><span class="profil-label">Type d'adhésion :</span>
-                <p><span class="profil-label">Préférences :</span></p>
-            </div>
+    <div class="profil-container">
+    <div class="profil-card shadow-lg p-4">
+        <div class="text-center mb-4">
+            <img src="images/profil-orange.png" alt="Votre Profil" class="profil-title-img">
+        </div>
+        <div class="profil-info">
+            <p><span class="profil-label">Nom :</span></p>
+            <p><span class="profil-label">Prénom :</span></p>
+            <p><span class="profil-label">Email :</span></p>
+            <p><span class="profil-label">Type d'adhésion :</span></p>
+            <p><span class="profil-label">Préférences :</span></p>
         </div>
     </div>
+</div>
 
     <?php include('include/footer.php'); ?>
 </body>
