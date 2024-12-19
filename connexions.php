@@ -33,6 +33,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             // vérification du mot de passe pour l'utilisateur
             if ($utilisateur && password_verify($motdepasse, $utilisateur['mot_de_passe'])) {
+                $_SESSION['id_adherent'] = $utilisateur['id_adherent'];
                 $_SESSION['utilisateur'] = $utilisateur['email'];
                 $_SESSION['nom'] = $utilisateur['nom'];
                 $_SESSION['prenom'] = $utilisateur['prenom'];
