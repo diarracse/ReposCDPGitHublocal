@@ -31,17 +31,17 @@ $resultats->closeCursor();
 // Vvariable message erreur
 $message = "";
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-$titre = isset($_POST['new_titre']) ? $_POST['new_titre'] : '';
-$description = isset($_POST['new_description']) ? $_POST['new_description'] : '';
-$lieu = isset($_POST['new_lieu']) ? $_POST['new_lieu'] : '';
-$nom_type = isset($_POST['new_nom_type']) ? $_POST['new_nom_type'] : '';
-$date_evenement = isset($_POST['new_date_evenement']) ? $_POST['new_date_evenement'] : '';
-$image = isset($_FILES['new_image']) ? $_FILES['new_image'] : '';
+    $titre = isset($_POST['new_titre']) ? $_POST['new_titre'] : '';
+    $description = isset($_POST['new_description']) ? $_POST['new_description'] : '';
+    $lieu = isset($_POST['new_lieu']) ? $_POST['new_lieu'] : '';
+    $nom_type = isset($_POST['new_nom_type']) ? $_POST['new_nom_type'] : '';
+    $date_evenement = isset($_POST['new_date_evenement']) ? $_POST['new_date_evenement'] : '';
+    $image = isset($_FILES['new_image']) ? $_FILES['new_image'] : '';
 
-// gestion des nouveaux types d'évènements
-$nom_type = isset($_POST['nom_type']) ? $_POST['nom_type'] : '';
-$nouveau_type = isset($_POST['nouveau_type']) ? $_POST['nouveau_type'] : '';
-$nom_type = !empty($nouveau_type) ? $nouveau_type : $nom_type;
+    // gestion des nouveaux types d'évènements
+    $nom_type = isset($_POST['nom_type']) ? $_POST['nom_type'] : '';
+    $nouveau_type = isset($_POST['nouveau_type']) ? $_POST['nouveau_type'] : '';
+    $nom_type = !empty($nouveau_type) ? $nouveau_type : $nom_type;
 
 
     if ($titre && $description && $lieu && $nom_type && $date_evenement && $image) {
@@ -112,54 +112,58 @@ $nom_type = !empty($nouveau_type) ? $nouveau_type : $nom_type;
     <?php include('include/menu.php'); ?>
 
     <div class="container ">
-      <!-- afficher le message d'erreur -->
-      <?php if (!empty($message)) { echo $message; } ?>
+        <!-- afficher le message d'erreur -->
+        <?php if (!empty($message)) {
+            echo $message;
+        } ?>
 
-      <div class="row">
-          <!-- Formulaire d'ajout d'évènement -->
-          <div class="col-lg-6">
-              <div class="container p-5 my-5 shadow rounded-5">
-                  <h2 class="text-center fw-bold mb-4">Ajouter un évènement</h2>
-                  <form action="" method="post" enctype="multipart/form-data">
-                      <div class="mb-3">
-                          <input type="text" name="new_titre" class="form-control rounded-4" placeholder="Titre de l'évènement" required>
-                      </div>
-                      <div class="mb-3">
-                          <textarea name="new_description" class="form-control rounded-4" placeholder="Description" required></textarea>
-                      </div>
-                      <div class="mb-3">
-                          <input type="text" name="new_lieu" class="form-control rounded-4" placeholder="Lieu" required>
-                      </div>
-                      <div class="form-group">
-                          <label for="nom_type"></label>
-                          <select id="nom_type" name="nom_type" class="form-control rounded-4 rounded-4">
-    <option value="" disabled selected>Choisir un type existant</option>
-    <?php
-    foreach ($typesEvenement as $type) {
-        echo "<option value=\"" . htmlspecialchars($type['nom_type']) . "\">" . htmlspecialchars($type['nom_type']) . "</option>";
-    }
-    ?>
-</select>
+        <div class="row">
+            <!-- Formulaire d'ajout d'évènement -->
+            <div class="col-lg-6  offset-lg-3 col-md-8 offset-md-2 col-12 accordion">
+                <div class="container p-5 my-5 shadow rounded-5 accordion-item">
+                    <h2 class="text-center fw-bold mb-4 accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">Ajouter un évènement</button></h2>
+                    <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                        <form action="" method="post" enctype="multipart/form-data" class="accordion-body">
+                            <div class="mb-3">
+                                <input type="text" name="new_titre" class="form-control rounded-4" placeholder="Titre de l'évènement" required>
+                            </div>
+                            <div class="mb-3">
+                                <textarea name="new_description" class="form-control rounded-4" placeholder="Description" required></textarea>
+                            </div>
+                            <div class="mb-3">
+                                <input type="text" name="new_lieu" class="form-control rounded-4" placeholder="Lieu" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="nom_type"></label>
+                                <select id="nom_type" name="nom_type" class="form-control rounded-4 rounded-4">
+                                    <option value="" disabled selected>Choisir un type existant</option>
+                                    <?php
+                                    foreach ($typesEvenement as $type) {
+                                        echo "<option value=\"" . htmlspecialchars($type['nom_type']) . "\">" . htmlspecialchars($type['nom_type']) . "</option>";
+                                    }
+                                    ?>
+                                </select>
 
-                          <p class="form-text text-muted">Ou ajoutez un nouveau type ci-dessous</p>
-                      </div>
-                      <div class="form-group">
-                          <label for="nouveau_type"></label>
-                          <input type="text" id="nouveau_type" name="nouveau_type" class="form-control rounded-4 rounded-4" placeholder="Nouveau type d'évènement">
-                      </div>
-                      <div class="mb-3">
-                          <input type="date" name="new_date_evenement" class="form-control rounded-4" required>
-                      </div>
-                      <div class="mb-3">
-                          <input type="file" name="new_image" class="form-control rounded-4" accept="image/*" required>
-                      </div>
-                      <button type="submit" class="CTA">Ajouter</button>
-                  </form>
-              </div>
-          </div>
+                                <p class="form-text text-muted">Ou ajoutez un nouveau type ci-dessous</p>
+                            </div>
+                            <div class="form-group">
+                                <label for="nouveau_type"></label>
+                                <input type="text" id="nouveau_type" name="nouveau_type" class="form-control rounded-4 rounded-4" placeholder="Nouveau type d'évènement">
+                            </div>
+                            <div class="mb-3">
+                                <input type="date" name="new_date_evenement" class="form-control rounded-4" required>
+                            </div>
+                            <div class="mb-3">
+                                <input type="file" name="new_image" class="form-control rounded-4" accept="image/*" required>
+                            </div>
+                            <button type="submit" class="CTA">Ajouter</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
 
-      </div>
-  </div>
+        </div>
+    </div>
 
 
     <div class="container">
@@ -184,7 +188,7 @@ $nom_type = !empty($nouveau_type) ? $nouveau_type : $nom_type;
                     <!-- formulaire pour modifier -->
                     <div id="formModifierEvenement">
                         <h2 class="text-center fw-bold mt-4 mb-4">Modifier l'évènement</h2>
-                            <form id="modifierForm">
+                        <form id="modifierForm">
                             <input type="hidden" id="idEvenement" name="idEvenement">
                             <input type="text" class="form-control rounded-4 mx-auto" id="titre" name="titre" placeholder="Nom de l'évènement"><br>
                             <textarea class="form-control rounded-4 mx-auto" id="description" name="description" placeholder="Description"></textarea><br>
@@ -219,7 +223,7 @@ $nom_type = !empty($nouveau_type) ? $nouveau_type : $nom_type;
                     <div id="divadherent"></div>
 
                     <form method="GET">
-                        <select id="selectAdherent" name="idadherent" size="5" class="form-control rounded-4 text-center" >
+                        <select id="selectAdherent" name="idadherent" size="5" class="form-control rounded-4 text-center">
                             <?php
                             // boucle pour afficher chaque infos en fonction de l'id
                             foreach ($tableauAdherent as $adherent) {
@@ -249,14 +253,15 @@ $nom_type = !empty($nouveau_type) ? $nouveau_type : $nom_type;
                         </div>
                     </script>
                 </div>
-            </div>       
+            </div>
         </div>
     </div>
 
 
     <?php include('include/footer.php'); ?>
-    
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
+
 </html>

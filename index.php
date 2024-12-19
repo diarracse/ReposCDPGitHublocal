@@ -1,20 +1,15 @@
 <?php
 include("config/config.php");
+session_start();
 
 
-$requete = 'SELECT * FROM Evenement WHERE date_evenement >= CURDATE() ORDER BY date_evenement ASC LIMIT 1';
-$resultats = $pdo->query($requete);
-$evenement_recent = $resultats->fetchAll(PDO::FETCH_ASSOC);
-$resultats->closeCursor();
-
-
-$requete = 'SELECT * FROM Evenement WHERE date_evenement >= CURDATE() ORDER BY date_evenement ASC LIMIT 2 OFFSET 1';
+$requete = 'SELECT * FROM Evenement ORDER BY date_evenement DESC LIMIT 3';
 $resultats = $pdo->query($requete);
 $evenements = $resultats->fetchAll(PDO::FETCH_ASSOC);
 $resultats->closeCursor();
 
-
 ?>
+
 
 <!DOCTYPE html>
 <html lang="fr">
@@ -31,10 +26,18 @@ $resultats->closeCursor();
     <header>
         <img class="position-absolute z-3 top-50 start-50 translate-middle w-75 px-md-5" src="images/logo-entier-blanc.png" alt="logo-entier-blanc">
 
-        <a href="connexions.php">
+        <a href="profil.php">
             <div class="d-flex justify-content-end">
                 <div class="position-absolute z-3 d-flex align-items-center m-3">
-                    <p class="mb-0 me-3 d-md-block d-none text-light">Se connecter</p>
+                    <p class="mb-0 me-3 d-md-block d-none text-light"><?php
+                            if (isset($_SESSION['utilisateur'])) {
+                                echo "Mon compte";
+                            } else {
+                                echo "Se connecter";
+                            }
+
+                        ?>
+                    </p>
                     <img class="photo-profil  d-md-block d-none" src="images/profil.png" alt="">
                 </div>
             </div>
@@ -62,7 +65,7 @@ $resultats->closeCursor();
 
     <section class="container my-5">
 
-        <h1 class="text-center">Venez découvrir l'association <br> VIVRE SAINT-FORTUNAT</h1>
+        <h2 class="text-center">Venez découvrir l'association <br> VIVRE SAINT-FORTUNAT</h2>
         <div class="row mt-5  d-flex flex-wrap-reverse">
             <div class="col-lg-6 mt-lg-0 mt-5">
                 <p class="text-justify">VIVRE SAINT-FORTUNAT a pour but la préservation du site de Saint-Fortunat (commune de Saint-Didier) et de son patrimoine ainsi que l’animation du hameau : <br><br>
@@ -124,27 +127,12 @@ $resultats->closeCursor();
             </div>
 
             <div class="carousel-inner">
-
-                <div class="carousel-item active">
-
-                    <img class="d-block w-100 img-carousel" src="images/evenement/<?php echo $evenement_recent[0]['image'] ?>" alt="image évènement">
-
-                    <div class="d-flex justify-content-center">
-                        <a class="CTA-carousel" href="description_evenement.php?id_evenement=<?php echo $evenement_recent[0]['id_evenement']; ?>"> <?php echo $evenement_recent[0]['titre'];?> (Découvrir)</a>
-                    </div>
-                </div>
-
                 <?php foreach ($evenements as $evenement) : ?>
-                    <div class="carousel-item">
-                        <img class="d-block w-100 img-carousel" src="images/evenement/<?php echo $evenement['image'] ?>" alt="image évènement">
-
-                        <div class="d-flex justify-content-center">
-                            <a class="CTA-carousel" href="description_evenement.php?id_evenement=<?php echo $evenement['id_evenement']; ?>"><?php echo $evenement ['titre']?> (Découvrir)</a>
-                        </div>
+                    <div class="carousel-item active">
+                        <img class="d-block w-100" src="images/evenement/<?php echo $evenement['image'] ?>" alt="image évènement">
                     </div>
                 <?php endforeach; ?>
             </div>
-
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Previous</span>
@@ -155,6 +143,9 @@ $resultats->closeCursor();
             </button>
         </div>
 
+        <div class="d-flex justify-content-center">
+            <a class="mt-5 mb-3 CTA" href="description_evenement.php?id_evenement=<?php echo $evenement['id_evenement']; ?>">Découvrir l'évènement</a>
+        </div>
 
 
     </section>

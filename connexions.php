@@ -34,6 +34,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             // vérification du mot de passe pour l'utilisateur
             if ($utilisateur && password_verify($motdepasse, $utilisateur['mot_de_passe'])) {
                 $_SESSION['utilisateur'] = $utilisateur['email'];
+                $_SESSION['nom'] = $utilisateur['nom'];
+                $_SESSION['prenom'] = $utilisateur['prenom'];
+                $_SESSION['type_adhesion'] = $utilisateur['type_adhesion'];
+                $_SESSION['date_inscription'] = $utilisateur['date_inscription'];
+
+
+    
                 header('Location: index.php'); // redirection vers la page utilisateur
                 exit();
             } else {

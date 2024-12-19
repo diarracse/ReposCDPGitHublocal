@@ -19,8 +19,17 @@
                 <p class="description-tel text-center mb-0 text-light">Contact</p>
             </div>
             <div class="col d-flex flex-column text-center">
-                <a href="connexions.php"><img class="navbar-brand m-0" src="images/profil.png" alt=""></a>
-                <p class="description-tel text-center mb-0 text-light">Connexion</p>
+                <a href="profil.php"><img class="navbar-brand m-0" src="images/profil.png" alt=""></a>
+                <p class="description-tel text-center mb-0 text-light"><?php
+                        if (isset($_SESSION['utilisateur'])) {
+                           
+                           echo "Compte";
+                        }
+                        else{
+                            echo "Connecter";
+                        }
+                    
+                    ?></p>
             </div>
         </div>
     </div>
