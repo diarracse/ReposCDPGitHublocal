@@ -24,8 +24,11 @@ $resultats->closeCursor();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="images/orange.ico" type="image/x-icon">
+    <meta name="description" content="Bienvenue sur le site de VIVRE SAINT-FORTUNAT ! Découvrez nos actions pour préserver le patrimoine historique, environnemental et urbanistique du hameau de Saint-Fortunat. Participez à nos événements culturels, festifs et sportifs, et explorez nos initiatives de restauration et visites guidées du patrimoine local." />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="CSS/style.css">
+    <link rel="shortcut icon" href="images/orange.ico" type="image/x-icon">
+
     <title>Vivre Saint-Fortunat</title>
 </head>
 
