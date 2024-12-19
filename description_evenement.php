@@ -9,7 +9,7 @@ $resultats = $pdo->query($requete);
 $tabEvenement = $resultats->fetch(PDO::FETCH_ASSOC);
 $resultats->closeCursor();
 
-$requete = 'SELECT * FROM evenement WHERE id_type = ' . $tabEvenement['id_type'] .' AND id_evenement != ' . $_GET['id_evenement'] ;
+$requete = 'SELECT * FROM evenement WHERE id_type = ' . $tabEvenement['id_type'] . ' AND id_evenement != ' . $_GET['id_evenement'];
 
 $resultats = $pdo->query($requete);
 $tabType = $resultats->fetchAll(PDO::FETCH_ASSOC);
@@ -35,11 +35,12 @@ $resultats->closeCursor();
 
     <main>
 
-
-
-
+        <div class="m-3">
+            <a href="evenements.php"><img class="retour" src="images/desc_events/retour.png" alt=""></a>
+        </div>
 
         <div class="text-center mt-5 mb-5">
+
             <h1 class="mb-5 "><?php echo $tabEvenement['titre']; ?></h1>
             <div class=" col-8 offset-2">
 
@@ -82,7 +83,7 @@ $resultats->closeCursor();
 
         <div class="row mx-5 text-center justify-content-center my-5">
 
-        <h2 class="mb-4">Autres événements</h2>
+            <h2 class="mb-4">Autres événements</h2>
 
             <?php
             foreach ($tabType as $evenement) {
@@ -95,7 +96,7 @@ $resultats->closeCursor();
                             <img src="images/evenement/<?php echo $evenement["image"]; ?>" alt="image événement" class="w-100">
                             <p class="truncate"><?php echo $evenement["description"]; ?></p>
                             <div class="text-center mt-4 mb-2">
-                            <a class="CTA" href="description_evenement.php?id_evenement=<?php echo $evenement['id_evenement'] ?>">Voir l'article</a>
+                                <a class="CTA" href="description_evenement.php?id_evenement=<?php echo $evenement['id_evenement'] ?>">Voir l'article</a>
                             </div>
                         </div>
                     </div>

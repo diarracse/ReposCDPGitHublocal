@@ -26,7 +26,7 @@ if (!empty($nom_type)) {
 }
 
 
-$requete .= ' ORDER BY date_evenement DESC';
+$requete .= ' ORDER BY date_evenement ASC';
 
 
 $resultats = $pdo->query($requete);
@@ -61,28 +61,25 @@ $resultats_types->closeCursor();
         <p class="text-center">Découvrez tous les évènements organisés par l’association Vivre Saint-Fortunat</p>
     </div>
 
-    <div class="container d-flex justify-content-between">
+    <div class="container d-md-flex align-items-center justify-content-between">
 
-        <div class="d-md-flex w-75 mb-lg-5">
-
+        <div class="w-100">
             <a href="?filtrer=avenir" class="CTA-events me-2">A venir</a>
             <a href="?filtrer=passes" class="CTA-events me-2">Passés</a>
             <a href="evenements.php" class="CTA-events-annule">X</a>
         </div>
 
-        <form method="get" class="d-flex">
-            
-            <select id="nom_type" name="nom_type" class="CTA-events px-4" onchange="this.form.submit()">
+        <form method="get">
+            <select id="nom_type" name="nom_type" class="CTA-events px-4 my-4" onchange="this.form.submit()">
                 <option value="" disabled selected>Choisir un type existant</option>
                 <?php
                 foreach ($typesEvenement as $type) {
                     echo "<option value=\"" . $type['nom_type'] . "\"";
                     if (isset($_GET['nom_type']) && $_GET['nom_type'] == $type['nom_type']) {
-                        echo " selected"; 
+                        echo " selected";
                     }
                     echo ">" . $type['nom_type'] . "</option>";
                 }
-                
                 ?>
             </select>
         </form>
