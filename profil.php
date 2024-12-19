@@ -42,8 +42,8 @@ $utilisateur = $_SESSION['utilisateur'];
                 <li class="list-group-item">Prénom :  <?php echo "" . $_SESSION['prenom']; ?></li>
                 <li class="list-group-item">Email : <?php echo "" . $_SESSION['utilisateur']; ?></li>
                 <li class="list-group-item">Type d'adhésion : <?php echo "" . $_SESSION['type_adhesion']; ?></li>
-                <li class="list-group-item">Date d'inscription : <?php echo "" . $_SESSION['date_inscription']; ?></li>
-            </ul>
+                <li class="list-group-item">Date d'inscription : <?php echo date("d/m/Y", strtotime($_SESSION['date_inscription'])); ?></li>
+                </ul>
             <!-- formulaire pour se déconnecter -->
             <form action="" method="POST" class="text-center mt-4">
                 <button type="submit" name="logout" class="CTA">Se déconnecter</button>
