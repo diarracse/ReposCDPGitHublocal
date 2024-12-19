@@ -226,6 +226,12 @@ footer ul li a:hover {
     border-color: #f05423;
     box-shadow: 0 4px 8px rgba(240, 84, 35, 0.5);
 }
+
+select option:checked, select option:checked:active {
+    background-color: #f05423;
+    color: white;
+}
+
 .btn-primary {
     background-color: rgba(255, 255, 255, 0);
     border: 2px solid #d9451e;
@@ -344,4 +350,33 @@ textarea {
 .text-profile li{
     font-size: 20px;
     color: #F37038;
+}
+
+
+
+/*page 404*/
+
+
+.error-container {
+    text-align: center;
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+.error-code {
+    font-size: 100px;
+    font-weight: bold;
+    color: #F37038;
+}
+.error-message {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+.btn-home {
+    background-color: #007bff;
+    color: white;
+    font-size: 18px;
+    padding: 10px 20px;
+}
+.btn-home:hover {
+    background-color: #0056b3;
 }

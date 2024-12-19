@@ -1,0 +1,5 @@
+# Activer la réécriture d'URL
+RewriteEngine On
+
+# Rediriger toutes les erreurs 404 vers la page personnalisée
+ErrorDocument 404 /404.php

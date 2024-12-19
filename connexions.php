@@ -2,6 +2,9 @@
 session_start();
 include("config/config.php");
 
+
+//connexion
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (isset($_POST['email']) && isset($_POST['mot_de_passe'])) {
         $email = $_POST['email'];
@@ -22,6 +25,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             if ($admin && password_verify($motdepasse, $admin['mot_de_passe'])) {
               
                 $_SESSION['admin'] = $admin['email']; 
+                $_SESSION['redirige'] = true;
                 header('Location: admin.php'); // redirection vers la page admin
                 exit();
             }
