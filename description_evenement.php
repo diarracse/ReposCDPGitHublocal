@@ -1,6 +1,6 @@
 <?php
-include("config/config.php");
 
+include("config/config.php");
 
 // recupération des données
 $requete = 'SELECT * FROM evenement WHERE id_evenement = ' . $_GET['id_evenement'];
@@ -14,6 +14,8 @@ $requete = 'SELECT * FROM evenement WHERE id_type = ' . $tabEvenement['id_type']
 $resultats = $pdo->query($requete);
 $tabType = $resultats->fetchAll(PDO::FETCH_ASSOC);
 $resultats->closeCursor();
+
+
 
 
 ?>
