@@ -60,7 +60,7 @@
                 </section>
                 <section class="mb-4">
                     <h2 class="h5 text-orange mb-4">8. Modifications de la politique de confidentialité</h2>
-                    <p>Nous nous réservons le droit de modifier cette politique de confidentialité à tout moment. Toute modification sera publiée sur cette page, avec la date de mise à jour.</p>
+                    <p>Nous nous réservons le droit de modifier cette politique de confidentialité à tout moment. Toute modification sera publiée sur cette page.</p>
                 </section>
                 <section class="mb-4">
                     <h2 class="h5 text-orange mb-4">9. Contact</h2>

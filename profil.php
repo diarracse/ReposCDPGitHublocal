@@ -4,7 +4,7 @@ include("config/config.php");
 // Démarrer la session
 session_start();
 if (!isset($_SESSION['utilisateur'])) {
-    header("Location: connexion.php");
+    header("Location: connexions.php");
     exit;
 }
 
