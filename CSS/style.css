@@ -300,72 +300,6 @@ textarea {
     transform: scale(1.05); /* Zoom */
 }
 /*page profil*/
-.profil-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.profil-card {
-    max-width: 800px;
-    width: 100%;
-    background-color: #ffffff;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    text-align: center;
-}
-
-.profil-card h2 {
-    font-size: 250%;
-    font-weight: bold;
-    text-decoration: underline;
-    color: #f37038;
-}
-
-.profil-info {
-    text-align: left;
-}
-
-.profil-info p {
-    margin: 50px 0;
-    font-size: 150%;
-}
-
-.profil-label {
-    font-weight: bold;
-    color: #f37038;
-}
-
-/* Préférences affichées sous forme de badges */
-.profil-preferences {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.profil-preferences li {
-    display: inline-block;
-    margin: 15px;
-    background-color: #f37038;
-    color: #fff;
-    padding: 8px 12px;
-    border-radius: 20px;
-    font-size: 0.9rem;
-    text-transform: capitalize;
-    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
-}
-
-/* Responsivité */
-@media (max-width: 768px) {
-    .profil-card {
-        padding: 20px;
-    }
-
-    .profil-preferences li {
-        font-size: 0.8rem;
-        padding: 5px 8px;
-    }
-}
 
 .truncate {
     overflow: hidden;
@@ -389,5 +323,25 @@ textarea {
 }
 
 .p-orange {
+    color: #F37038;
+}
+
+.accordion-button:focus{
+    box-shadow: none;
+}
+
+.accordion-button:not(.collapsed){
+    background-color: #ffffff;
+    box-shadow: none;
+    color: black;
+}
+
+.accordion-button{
+    text-align: center;
+    font-size: inherit;
+}
+
+.text-profile li{
+    font-size: 20px;
     color: #F37038;
 }

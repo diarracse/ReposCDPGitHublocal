@@ -1,5 +1,6 @@
 <?php
 include("config/config.php");
+session_start();
 
 
 $requete = 'SELECT * FROM Evenement ORDER BY date_evenement DESC LIMIT 3';
@@ -25,10 +26,18 @@ $resultats->closeCursor();
     <header>
         <img class="position-absolute z-3 top-50 start-50 translate-middle w-75 px-md-5" src="images/logo-entier-blanc.png" alt="logo-entier-blanc">
 
-        <a href="connexions.php">
+        <a href="profil.php">
             <div class="d-flex justify-content-end">
                 <div class="position-absolute z-3 d-flex align-items-center m-3">
-                    <p class="mb-0 me-3 d-md-block d-none text-light">Se connecter</p>
+                    <p class="mb-0 me-3 d-md-block d-none text-light"><?php
+                            if (isset($_SESSION['utilisateur'])) {
+                                echo "Mon compte";
+                            } else {
+                                echo "Se connecter";
+                            }
+
+                        ?>
+                    </p>
                     <img class="photo-profil  d-md-block d-none" src="images/profil.png" alt="">
                 </div>
             </div>
@@ -120,7 +129,7 @@ $resultats->closeCursor();
             <div class="carousel-inner">
                 <?php foreach ($evenements as $evenement) : ?>
                     <div class="carousel-item active">
-                        <img class="d-block w-100" src="images/evenement/<?php echo $evenement ['image']?>"  alt="image évènement">
+                        <img class="d-block w-100" src="images/evenement/<?php echo $evenement['image'] ?>" alt="image évènement">
                     </div>
                 <?php endforeach; ?>
             </div>
