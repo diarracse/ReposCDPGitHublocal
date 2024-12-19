@@ -265,6 +265,11 @@ textarea {
     color: grey;
 }
 
+.moyen-text{
+    font-size: 15px;
+    color: grey;
+}
+
 .grand-text{
     font-size: 18px;
     color: black;

@@ -69,7 +69,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <div class="form-container">
             <h2>Inscription</h2>
 
-            <p class="petit-text mb-5">Pour soutenir notre association et participer activement à la vie locale, remplissez ce formulaire pour devenenir adhérent de Vivre Saint Fortunat. </p>
+            <p class="moyen-text mb-5">Pour soutenir notre association et participer activement à la vie locale, remplissez ce formulaire pour devenenir adhérent de Vivre Saint Fortunat. </p>
 
             
 
