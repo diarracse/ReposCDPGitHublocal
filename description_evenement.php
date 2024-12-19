@@ -42,7 +42,7 @@ $resultats->closeCursor();
             <h1 class="mb-5 "><?php echo $tabEvenement['titre']; ?></h1>
             <div class=" col-8 offset-2">
 
-                <p class="p-orange text-start mt-3"><?php echo $tabEvenement['date_evenement']; ?></p>
+                <p class="p-orange text-start mt-3"><?php echo date("d/m/Y", strtotime($tabEvenement['date_evenement'])); ?></p>
                 <img class="w-100 img-evenement shadow-lg" src="images/evenement/<?php echo $tabEvenement['image'] ?>" alt="image événement">
             </div>
             <p class="grand-text p-justify"><?php echo $tabEvenement['description']; ?></p>
