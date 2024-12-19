@@ -1,3 +1,15 @@
+<?php
+include("config/config.php");
+
+
+$requete = 'SELECT * FROM Evenement ORDER BY date_evenement DESC LIMIT 3';
+$resultats = $pdo->query($requete);
+$evenements = $resultats->fetchAll(PDO::FETCH_ASSOC);
+$resultats->closeCursor();
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -69,7 +81,7 @@
             <div class="row mt-5">
                 <div class="col-md-4 d-flex flex-column align-items-center mb-5">
                     <img class="mb-4" src="images/accueil/annee.png" alt="">
-                    <p class="text-light fs-3 fw-bold">22</p>
+                    <p class="text-light fs-3 fw-bold">22 ans</p>
                     <p class="text-light">Années d'existence</p>
                 </div>
                 <div class="col-md-4 d-flex flex-column align-items-center mb-5">
@@ -80,7 +92,7 @@
                 <div class="col-md-4 d-flex flex-column align-items-center mb-5">
                     <img class="mb-4" src="images/accueil/events.png" alt="">
                     <p class="text-light fs-3 fw-bold">500</p>
-                    <p class="text-light">Évènements organisés</p>
+                    <p class="text-light">Évènements organisées</p>
                 </div>
             </div>
             <div class="d-flex justify-content-center">
@@ -96,22 +108,21 @@
                 <p class="text-end">Voir tout ></p>
             </a>
         </div>
+
         <div id="carouselExampleIndicators" class="carousel slide container">
+
             <div class="carousel-indicators">
                 <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
                 <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
                 <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
             </div>
+
             <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="images/accueil/image-accueil.jpg" class="d-block w-100" alt="...">
-                </div>
-                <div class="carousel-item active">
-                    <img src="images/accueil/image-accueil.jpg" class="d-block w-100" alt="...">
-                </div>
-                <div class="carousel-item active">
-                    <img src="images/accueil/image-accueil.jpg" class="d-block w-100" alt="...">
-                </div>
+                <?php foreach ($evenements as $evenement) : ?>
+                    <div class="carousel-item active">
+                        <img class="d-block w-100" src="images/evenement/<?php echo $evenement ['image']?>"  alt="image évènement">
+                    </div>
+                <?php endforeach; ?>
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -122,9 +133,12 @@
                 <span class="visually-hidden">Next</span>
             </button>
         </div>
+
         <div class="d-flex justify-content-center">
-            <a class="mt-5 mb-3 CTA" href="description_evenement.php?id=<?php echo $evenement['id_evenement']; ?> ">Découvrir l'évènement</a>
+            <a class="mt-5 mb-3 CTA" href="description_evenement.php?id_evenement=<?php echo $evenement['id_evenement']; ?>">Découvrir l'évènement</a>
         </div>
+
+
     </section>
 
     <?php include('include/footer.php'); ?>
