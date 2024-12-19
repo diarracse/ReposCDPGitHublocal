@@ -1,6 +1,6 @@
 <footer class="py-5 mt-5">
     <div class="container">
-        <div class="row align-items-center">
+        <div class="row d-flex align-items-start">
             
             <!-- Logo -->
             <div class="col-12 col-md-4 mb-3">
