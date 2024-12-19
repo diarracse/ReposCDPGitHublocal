@@ -1,6 +1,6 @@
 <footer class="py-5 mt-5">
     <div class="container">
-        <div class="row align-items-center text-md-start">
+        <div class="row align-items-center">
             
             <!-- Logo -->
             <div class="col-12 col-md-4 mb-3">
@@ -10,10 +10,10 @@
             </div>
 
             <!-- ADRESSE -->
-            <div class="col-12 col-md-4 mb-3">
+            <div class="col-12 col-md-5 mb-3">
                 <ul>
                 <h5 class="text-white fw-bold">CORDONNÉES</h5>
-                <li class="text-decoration-none text-white fw-bold"<a href="tel:+33063456789">06 23 45 67 89</a><br></li>
+                <li class="text-decoration-none text-white fw-bold"><a href="tel:+33063456789">06 23 45 67 89</a><br></li>
 
                 <li class="text-decoration-none text-white "><address class="footer-icon bi bi-geo-alt">
                     Vivre Saint Fortunat - Mairie de Saint<br>
@@ -26,7 +26,7 @@
             </div>
 
             <!-- INFORMATIONS -->
-            <div class="col-12 col-md-4 mb-3 mb-5 mb-md-0">
+            <div class="col-12 col-md-3 mb-3 mb-5 mb-md-0">
                 <h5 class="text-white fw-bold">INFORMATIONS</h5>
                 <ul class="list-unstyled mb-0">
                     <li><a href="plandusite.php" class="text-white ">Plan du site</a></li>
