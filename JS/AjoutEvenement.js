@@ -1,7 +1,7 @@
 document.getElementById('formEvenement').addEventListener('submit', function (e) {
     e.preventDefault();
 
-    const formData = new FormData(this);
+    let formData = new FormData(this);
 
     fetch('API/ajouterEvenement.php', {
         method: 'POST',

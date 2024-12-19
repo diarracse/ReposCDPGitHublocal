@@ -43,7 +43,7 @@
                     <label for="message">Message</label>
                     <textarea type="textarea" id="message" class="form-control" required placeholder="Votre message"></textarea>
                 </div>
-                <button type="submit" class="CTA">Envoyer</button>
+                <button type="submit" id="envoyerContact" class="CTA">Envoyer</button>
                 <p class="petit-text">Les informations recueillies via ce formulaire sont enregistrées pour répondre à votre demande. Elles ne seront ni partagées, ni revendues.</p>
             </form>
         </div>
