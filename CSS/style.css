@@ -142,6 +142,23 @@ footer ul li a:hover {
     color: red;
 }
 
+.CTA-carousel{
+    border: 2px solid #F37038;
+    border-radius: 30px;
+    text-decoration: none;
+    color: #F37038;
+    padding: 10px 20px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    transition: 0.5s ease;
+    background-color: white;
+}
+
+.CTA-carousel:hover{
+    background-color: #F37038;
+    color: white;
+}
+
 /*Page accueil*/
 
 .image-fond {
@@ -386,8 +403,23 @@ textarea {
 
 .img-evenement { 
     border-radius: 0 30px 30px 30px;
+    height: 350px; /* Définissez une hauteur fixe pour toutes les images */
+    object-fit: cover; /* Adapte l'image pour remplir l'espace défini tout en conservant le ratio */
+    width: 100%; /* Assure que l'image occupe toute la largeur de son conteneur */
+/* Facultatif : arrondit les coins pour un aspect plus esthétique */
+    }
+
+.img-carousel {
+    height: 700px;
+    object-fit: cover;
+    width: 100%;
 }
+    
 
 .p-orange {
     color: #F37038;
+}
+
+.retour {
+    width: 40px;
 }
