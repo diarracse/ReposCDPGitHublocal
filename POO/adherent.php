@@ -15,12 +15,12 @@ class Adherent {
     }
 
     public function save(PDO $pdo) {
-        // Préparation de la requête d'insertion
+        //  requête pour insérer dans la bdd
         $sql = "INSERT INTO Adherent (nom, prenom, email, type_adhesion, mot_de_passe) 
                 VALUES (:nom, :prenom, :email, :type_adhesion, :mot_de_passe)";
         $stmt = $pdo->prepare($sql);
 
-        // Exécution de la requête
+        // execution de la requête 
         $stmt->execute([
             ':nom' => $this->nom,
             ':prenom' => $this->prenom,

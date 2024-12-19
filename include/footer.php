@@ -11,13 +11,18 @@
 
             <!-- ADRESSE -->
             <div class="col-12 col-md-4 mb-3">
-                <h5 class="text-white fw-bold">ADRESSE</h5>
-                <address class="text-white mb-0">
-                    Mairie<br>
-                    Téléphone : <a href="tel:+33123456789" class="text-decoration-none text-white fw-bold">01 23 45 67 89</a><br>
-                    SAINT-DIDIER-AU-MONT-D'OR<br>
-                    69370, France<br>
-                </address>
+                <ul>
+                <h5 class="text-white fw-bold">CORDONNÉES</h5>
+                <li class="text-decoration-none text-white fw-bold"<a href="tel:+33063456789">06 23 45 67 89</a><br></li>
+
+                <li class="text-decoration-none text-white "><address class="footer-icon bi bi-geo-alt">
+                    Vivre Saint Fortunat - Mairie de Saint<br>
+                    Didier au Mont D'Or - 69370 Saint Didier au Mont D'Or<br>
+                </address></li>
+                <li><a href="https://www.facebook.com/vivresaintfortunat/?locale=fr_FR"  class="text-white mb-0">Facebook</a></li>
+                <a href="mailto:vivre@saintfortunat.org">vivre@saintfortunat.org</a>
+
+            </ul>
             </div>
 
             <!-- INFORMATIONS -->

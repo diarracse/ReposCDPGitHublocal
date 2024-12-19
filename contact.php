@@ -12,7 +12,7 @@
 <body>
     <?php include('include/menu.php'); ?>
     <div class="text-center mt-5">
-        <h2>Nous contacter</h2>
+        <h1 class="fw-bold">Nous contacter</h1>
 
         <p class="grand-text">Indiquez-nous ce que vous pensez de notre site Web, de notre Association ou de nos activités.Si vous nous communiquez vos coordonnées, nous serons en mesure de vous contacter pour apporter une réponse personnalisée</p>
     </div>
