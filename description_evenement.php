@@ -37,7 +37,7 @@ $resultats->closeCursor();
     <main>
 
         <div class="m-3">
-            <a href="evenements.php"><img class="retour" src="images/desc_events/retour.png" alt=""></a>
+            <a href="evenements.php"><img class="retour" src="images/desc_events/retour.png" alt="retour page évènement"></a>
         </div>
 
         <div class="text-center mt-5 mb-5">
@@ -45,7 +45,7 @@ $resultats->closeCursor();
             <h1 class="mb-5 "><?php echo $tabEvenement['titre']; ?></h1>
             <div class=" col-8 offset-2">
 
-                <p class="p-orange text-start mt-3"><?php echo date("d/m/Y", strtotime($tabEvenement['date_evenement'])); ?></p>
+                <p class="p-orange text-start mt-3">À <?php echo $tabEvenement['lieu'] ?> le <?php echo date("d/m/Y", strtotime($tabEvenement['date_evenement'])); ?></p>
                 <img class="w-100 img-evenement shadow-lg" src="images/evenement/<?php echo $tabEvenement['image'] ?>" alt="image événement">
             </div>
             <p class="grand-text p-justify"><?php echo $tabEvenement['description']; ?></p>

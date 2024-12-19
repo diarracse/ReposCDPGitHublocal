@@ -17,6 +17,9 @@ unset($_SESSION['redirige']);
 
 
 
+
+
+
 // requête pour les évènements
 $requete = 'SELECT * FROM Evenement ORDER BY date_evenement DESC';
 $resultats = $pdo->query($requete);
@@ -57,7 +60,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if ($titre && $description && $lieu && $nom_type && $date_evenement && $image) {
         try {
-            $dossier = 'images/evenement';
+            $dossier = 'images/evenement/';
             $fichier = basename($image['name']);
             $taille_maxi = 1000000;
             $taille = filesize($image['tmp_name']);
@@ -79,10 +82,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 'AAAAAACEEEEIIIIOOOOOUUUUYaaaaaaceeeeiiiioooooouuuuyy'
             );
             $fichier = preg_replace('/([^.a-z0-9]+)/i', '-', $fichier);
-
+            
             $chemin = $dossier . $fichier;
+
             if (!move_uploaded_file($image['tmp_name'], $chemin)) {
-                throw new Exception("Échec de l'ajout de l'image.");
+                throw new Exception("Erreur lors de l'envoi du fichier.");
             }
 
             // crer ou ajouter un nouveau type d'évènement
@@ -90,15 +94,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $id_type = $typeEvenement->getIdOrCreate($pdo);
 
             // ajout de l'évènement dans la bdd
-            $evenement = new Evenement($titre, $description, $lieu, $id_type, $date_evenement, $chemin);
+            $evenement = new Evenement($titre, $description, $lieu, $id_type, $date_evenement, $fichier);
             $evenement->save($pdo);
 
-            $message = "<div class='alert alert-success'>Événement ajouté avec succès.</div>";
+            $_SESSION['redirige'] = true;
+            $_SESSION['message_ajouter'] = "<div class='alert alert-success'>Événement ajouté avec succès.</div>";
+            header("Location: admin.php");
         } catch (Exception $e) {
-            $message = "<div class='alert alert-danger'>Erreur : " . htmlspecialchars($e->getMessage()) . "</div>";
+            $_SESSION['message_ajouter'] = "<div class='alert alert-danger'>Erreur : " . htmlspecialchars($e->getMessage()) . "</div>";
         }
     } else {
-        $message = "<div class='alert alert-danger'>Tous les champs sont obligatoires.</div>";
+        $_SESSION['message_ajouter'] = "<div class='alert alert-danger'>Tous les champs sont obligatoires.</div>";
     }
 }
 ?>
@@ -218,8 +224,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     <div class="container ">
         <!-- afficher le message d'erreur -->
-        <?php if (!empty($message)) {
-            echo $message;
+        <?php if (!empty($_SESSION['message_ajouter'])) {
+            echo $_SESSION['message_ajouter'];
         } ?>
 
         <div class="row">
@@ -227,8 +233,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <div class="col-lg-6  offset-lg-3 col-md-8 offset-md-2 col-12 accordion">
                 <div class="container p-5 my-5 shadow rounded-5 accordion-item">
                     <h2 class="text-center fw-bold mb-4 accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">Ajouter un évènement</button></h2>
-                    <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                        <form action="" method="post" enctype="multipart/form-data" class="accordion-body">
+                    <div id="collapseOne" class="accordion-collapse collapse text-center" data-bs-parent="#accordionExample">
+                        <form action="<?php $_SESSION['redirige'] = true; ?>" method="post" enctype="multipart/form-data" class="accordion-body">
                             <div class="mb-3">
                                 <input type="text" name="new_titre" class="form-control rounded-4" placeholder="Titre de l'évènement" required>
                             </div>
