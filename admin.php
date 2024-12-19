@@ -2,6 +2,17 @@
 include("config/config.php");
 require_once 'POO/TypeEvenement.php';
 require_once 'POO/Evenement.php';
+session_start();
+
+// Vérifier si l'utilisateur a été redirigé
+if (!isset($_SESSION['redirige']) || $_SESSION['redirige'] !== true) {
+    // Si la variable n'existe pas ou n'est pas correcte, rediriger l'utilisateur vers une autre page
+    header("Location: acces_refuse.php"); // ou une page de connexion, ou une autre page de votre choix
+    exit();
+}
+
+// Si l'utilisateur a été redirigé correctement, supprimer la variable de session pour éviter des accès ultérieurs
+unset($_SESSION['redirige']);
 
 
 
@@ -111,61 +122,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <body>
     <?php include('include/menu.php'); ?>
 
-    <div class="container ">
-        <!-- afficher le message d'erreur -->
-        <?php if (!empty($message)) {
-            echo $message;
-        } ?>
-
-        <div class="row">
-            <!-- Formulaire d'ajout d'évènement -->
-            <div class="col-lg-6  offset-lg-3 col-md-8 offset-md-2 col-12 accordion">
-                <div class="container p-5 my-5 shadow rounded-5 accordion-item">
-                    <h2 class="text-center fw-bold mb-4 accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">Ajouter un évènement</button></h2>
-                    <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                        <form action="" method="post" enctype="multipart/form-data" class="accordion-body">
-                            <div class="mb-3">
-                                <input type="text" name="new_titre" class="form-control rounded-4" placeholder="Titre de l'évènement" required>
-                            </div>
-                            <div class="mb-3">
-                                <textarea name="new_description" class="form-control rounded-4" placeholder="Description" required></textarea>
-                            </div>
-                            <div class="mb-3">
-                                <input type="text" name="new_lieu" class="form-control rounded-4" placeholder="Lieu" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="nom_type"></label>
-                                <select id="nom_type" name="nom_type" class="form-control rounded-4 rounded-4">
-                                    <option value="" disabled selected>Choisir un type existant</option>
-                                    <?php
-                                    foreach ($typesEvenement as $type) {
-                                        echo "<option value=\"" . htmlspecialchars($type['nom_type']) . "\">" . htmlspecialchars($type['nom_type']) . "</option>";
-                                    }
-                                    ?>
-                                </select>
-
-                                <p class="form-text text-muted">Ou ajoutez un nouveau type ci-dessous</p>
-                            </div>
-                            <div class="form-group">
-                                <label for="nouveau_type"></label>
-                                <input type="text" id="nouveau_type" name="nouveau_type" class="form-control rounded-4 rounded-4" placeholder="Nouveau type d'évènement">
-                            </div>
-                            <div class="mb-3">
-                                <input type="date" name="new_date_evenement" class="form-control rounded-4" required>
-                            </div>
-                            <div class="mb-3">
-                                <input type="file" name="new_image" class="form-control rounded-4" accept="image/*" required>
-                            </div>
-                            <button type="submit" class="CTA">Ajouter</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </div>
-
-
     <div class="container">
         <div class="row">
             <div class="col-lg-6 col-md-12">
@@ -257,6 +213,60 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </div>
     </div>
 
+
+    <div class="container ">
+        <!-- afficher le message d'erreur -->
+        <?php if (!empty($message)) {
+            echo $message;
+        } ?>
+
+        <div class="row">
+            <!-- Formulaire d'ajout d'évènement -->
+            <div class="col-lg-6  offset-lg-3 col-md-8 offset-md-2 col-12 accordion">
+                <div class="container p-5 my-5 shadow rounded-5 accordion-item">
+                    <h2 class="text-center fw-bold mb-4 accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">Ajouter un évènement</button></h2>
+                    <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                        <form action="" method="post" enctype="multipart/form-data" class="accordion-body">
+                            <div class="mb-3">
+                                <input type="text" name="new_titre" class="form-control rounded-4" placeholder="Titre de l'évènement" required>
+                            </div>
+                            <div class="mb-3">
+                                <textarea name="new_description" class="form-control rounded-4" placeholder="Description" required></textarea>
+                            </div>
+                            <div class="mb-3">
+                                <input type="text" name="new_lieu" class="form-control rounded-4" placeholder="Lieu" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="nom_type"></label>
+                                <select id="nom_type" name="nom_type" class="form-control rounded-4 rounded-4">
+                                    <option value="" disabled selected>Choisir un type existant</option>
+                                    <?php
+                                    foreach ($typesEvenement as $type) {
+                                        echo "<option value=\"" . htmlspecialchars($type['nom_type']) . "\">" . htmlspecialchars($type['nom_type']) . "</option>";
+                                    }
+                                    ?>
+                                </select>
+
+                                <p class="form-text text-muted">Ou ajoutez un nouveau type ci-dessous</p>
+                            </div>
+                            <div class="form-group">
+                                <label for="nouveau_type"></label>
+                                <input type="text" id="nouveau_type" name="nouveau_type" class="form-control rounded-4 rounded-4" placeholder="Nouveau type d'évènement">
+                            </div>
+                            <div class="mb-3">
+                                <input type="date" name="new_date_evenement" class="form-control rounded-4" required>
+                            </div>
+                            <div class="mb-3">
+                                <input type="file" name="new_image" class="form-control rounded-4" accept="image/*" required>
+                            </div>
+                            <button type="submit" class="CTA">Ajouter</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
 
     <?php include('include/footer.php'); ?>
 
