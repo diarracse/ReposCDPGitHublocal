@@ -102,6 +102,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <title>Page Admin</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="CSS/style.css">
+    <link rel="shortcut icon" href="images/orange.ico" type="image/x-icon">
+
     <script src="JS/mustache.min.js"></script>
     <script src="JS/script2.js"></script>
     <script src="JS/modifierSupprimer.js"></script>

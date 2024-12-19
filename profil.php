@@ -17,7 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['logout'])) {
 
 $utilisateur = $_SESSION['utilisateur'];
 
-$requete = "SELECT * FROM Participation JOIN Evenement ON Participation.id_evenement = Evenement.id_evenement JOIN Adherent ON Participation.id_adherent = Adherent.id_adherent WHERE adherent.id_adherent = $_SESSION[id_adherent]";
+$requete = "SELECT * FROM Participation JOIN Evenement ON Participation.id_evenement = Evenement.id_evenement JOIN Adherent ON Participation.id_adherent = Adherent.id_adherent WHERE adherent.id_adherent = " . $_SESSION['id_adherent'];
 $resultats = $pdo->query($requete);
 $participations = $resultats->fetchAll(PDO::FETCH_ASSOC);
 $resultats->closeCursor();
@@ -30,7 +30,11 @@ $resultats->closeCursor();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <meta name="description" content="Accédez à votre espace personnel pour consulter ou mettre à jour vos informations, suivre vos adhésions et vos participations aux événements de VIVRE SAINT-FORTUNAT." />
+
     <link rel="stylesheet" href="CSS/style.css">
+    <link rel="shortcut icon" href="images/orange.ico" type="image/x-icon">
+
     <title>Vivre Saint-Fortunat</title>
 </head>
 
