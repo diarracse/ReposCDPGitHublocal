@@ -9,7 +9,7 @@ $resultats = $pdo->query($requete);
 $tabEvenement = $resultats->fetch(PDO::FETCH_ASSOC);
 $resultats->closeCursor();
 
-$requete = 'SELECT * FROM evenement WHERE id_type = ' . $tabEvenement['id_type'];
+$requete = 'SELECT * FROM evenement WHERE id_type = ' . $tabEvenement['id_type'] .' AND id_evenement != ' . $_GET['id_evenement'] ;
 
 $resultats = $pdo->query($requete);
 $tabType = $resultats->fetchAll(PDO::FETCH_ASSOC);
