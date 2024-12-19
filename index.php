@@ -3,13 +3,19 @@ include("config/config.php");
 session_start();
 
 
-$requete = 'SELECT * FROM Evenement ORDER BY date_evenement DESC LIMIT 3';
+$requete = 'SELECT * FROM Evenement WHERE date_evenement >= CURDATE() ORDER BY date_evenement ASC LIMIT 1';
+$resultats = $pdo->query($requete);
+$evenement_recent = $resultats->fetchAll(PDO::FETCH_ASSOC);
+$resultats->closeCursor();
+
+
+$requete = 'SELECT * FROM Evenement WHERE date_evenement >= CURDATE() ORDER BY date_evenement ASC LIMIT 2 OFFSET 1';
 $resultats = $pdo->query($requete);
 $evenements = $resultats->fetchAll(PDO::FETCH_ASSOC);
 $resultats->closeCursor();
 
-?>
 
+?>
 
 <!DOCTYPE html>
 <html lang="fr">
@@ -36,8 +42,7 @@ $resultats->closeCursor();
                                 echo "Se connecter";
                             }
 
-                        ?>
-                    </p>
+                        ?></p>
                     <img class="photo-profil  d-md-block d-none" src="images/profil.png" alt="">
                 </div>
             </div>
@@ -65,7 +70,7 @@ $resultats->closeCursor();
 
     <section class="container my-5">
 
-        <h2 class="text-center">Venez découvrir l'association <br> VIVRE SAINT-FORTUNAT</h2>
+        <h1 class="text-center">Venez découvrir l'association <br> VIVRE SAINT-FORTUNAT</h1>
         <div class="row mt-5  d-flex flex-wrap-reverse">
             <div class="col-lg-6 mt-lg-0 mt-5">
                 <p class="text-justify">VIVRE SAINT-FORTUNAT a pour but la préservation du site de Saint-Fortunat (commune de Saint-Didier) et de son patrimoine ainsi que l’animation du hameau : <br><br>
@@ -127,12 +132,27 @@ $resultats->closeCursor();
             </div>
 
             <div class="carousel-inner">
+
+                <div class="carousel-item active">
+
+                    <img class="d-block w-100 img-carousel" src="images/evenement/<?php echo $evenement_recent[0]['image'] ?>" alt="image évènement">
+
+                    <div class="d-flex justify-content-center">
+                        <a class="CTA-carousel" href="description_evenement.php?id_evenement=<?php echo $evenement_recent[0]['id_evenement']; ?>"> <?php echo $evenement_recent[0]['titre'];?> (Découvrir)</a>
+                    </div>
+                </div>
+
                 <?php foreach ($evenements as $evenement) : ?>
-                    <div class="carousel-item active">
-                        <img class="d-block w-100" src="images/evenement/<?php echo $evenement['image'] ?>" alt="image évènement">
+                    <div class="carousel-item">
+                        <img class="d-block w-100 img-carousel" src="images/evenement/<?php echo $evenement['image'] ?>" alt="image évènement">
+
+                        <div class="d-flex justify-content-center">
+                            <a class="CTA-carousel" href="description_evenement.php?id_evenement=<?php echo $evenement['id_evenement']; ?>"><?php echo $evenement ['titre']?> (Découvrir)</a>
+                        </div>
                     </div>
                 <?php endforeach; ?>
             </div>
+
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Previous</span>
@@ -143,9 +163,6 @@ $resultats->closeCursor();
             </button>
         </div>
 
-        <div class="d-flex justify-content-center">
-            <a class="mt-5 mb-3 CTA" href="description_evenement.php?id_evenement=<?php echo $evenement['id_evenement']; ?>">Découvrir l'évènement</a>
-        </div>
 
 
     </section>

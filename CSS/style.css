@@ -32,52 +32,58 @@ footer ul li a:hover {
     padding: 16px 0 1px 0;
 }
 
-.menu ul, .menu-index ul{
+.menu ul,
+.menu-index ul {
     list-style: none;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.menu ul li, .menu-index ul li {
+.menu ul li,
+.menu-index ul li {
     margin: 0 15px;
 }
 
-.menu ul li a.active, .menu-index ul li a.active {
+.menu ul li a.active,
+.menu-index ul li a.active {
     text-decoration: underline;
 }
 
-.menu ul li a, .menu-index ul li a {
+.menu ul li a,
+.menu-index ul li a {
     color: #ffffff;
     text-decoration: none;
     transition: color 0.3s;
 }
 
-.menu ul li a:hover, .menu-index ul li a:hover {
+.menu ul li a:hover,
+.menu-index ul li a:hover {
     font-weight: bold;
 }
 
-.p-justify{
+.p-justify {
     text-align: justify;
 }
 
-/*Menu telephone */ 
+/*Menu telephone */
 
-.icon-nav-tel{
+.icon-nav-tel {
     padding: 10px 0;
     background-color: rgba(0, 0, 0, 0.6);
 }
 
-.icon-nav-tel img{
+.icon-nav-tel img {
     width: 35%;
 }
 
 .description-tel div p {
     font-size: 2vw;
 }
+
 /*Les boutons */
 
-.CTA{
+.CTA {
     border: 2px solid #F37038;
     border-radius: 30px;
     text-decoration: none;
@@ -89,12 +95,12 @@ footer ul li a:hover {
     background-color: white;
 }
 
-.CTA:hover{
+.CTA:hover {
     background-color: #F37038;
     color: white;
 }
 
-.CTA-blanc{
+.CTA-blanc {
     border: 1px solid #ffffff;
     border-radius: 30px;
     text-decoration: none;
@@ -105,12 +111,12 @@ footer ul li a:hover {
     background-color: #F37038;
 }
 
-.CTA-blanc:hover{
+.CTA-blanc:hover {
     background-color: white;
     color: #F37038;
 }
 
-.CTA-events{
+.CTA-events {
     border: 2px solid #F37038;
     border-radius: 30px;
     text-decoration: none;
@@ -121,12 +127,12 @@ footer ul li a:hover {
     background-color: white;
 }
 
-.CTA-events:hover{
+.CTA-events:hover {
     background-color: #F37038;
     color: white;
 }
 
-.CTA-events-annule{
+.CTA-events-annule {
     border: 2px solid #ff0000;
     border-radius: 100px;
     text-decoration: none;
@@ -137,9 +143,26 @@ footer ul li a:hover {
     background-color: #ff0000;
 }
 
-.CTA-events-annule:hover{
+.CTA-events-annule:hover {
     background-color: #ffffff;
     color: red;
+}
+
+.CTA-carousel{
+    border: 2px solid #F37038;
+    border-radius: 30px;
+    text-decoration: none;
+    color: #F37038;
+    padding: 10px 20px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    transition: 0.5s ease;
+    background-color: white;
+}
+
+.CTA-carousel:hover{
+    background-color: #F37038;
+    color: white;
 }
 
 /*Page accueil*/
@@ -164,7 +187,7 @@ footer ul li a:hover {
     width: 40px;
 }
 
-.infos { 
+.infos {
     background-color: #F37038;
 }
 
@@ -197,14 +220,17 @@ footer ul li a:hover {
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
     text-align: center;
 }
+
 .form-container h2 {
     margin-bottom: 40px;
     font-weight: bold;
 }
+
 .form-group {
     margin-bottom: 30px;
     position: relative;
 }
+
 .form-group label {
     font-weight: bold;
     color: #000;
@@ -214,6 +240,7 @@ footer ul li a:hover {
     background: #ffffff;
     padding: 0 5px;
 }
+
 .form-control {
     border: 2px solid #f05423;
     border-radius: 0 25px 25px 25px;
@@ -221,11 +248,13 @@ footer ul li a:hover {
     font-size: 16px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
+
 .form-control:focus {
     outline: none;
     border-color: #f05423;
     box-shadow: 0 4px 8px rgba(240, 84, 35, 0.5);
 }
+
 .btn-primary {
     background-color: rgba(255, 255, 255, 0);
     border: 2px solid #d9451e;
@@ -239,18 +268,22 @@ footer ul li a:hover {
     line-height: 1.5;
     transition: all 0.3s ease;
 }
+
 .btn-primary:hover {
     color: white;
     background-color: #d9451e;
 }
+
 p {
     font-size: 14px;
 }
+
 p a {
     color: #f05423;
     text-decoration: none;
     font-weight: bold;
 }
+
 p a:hover {
     text-decoration: underline;
 }
@@ -260,12 +293,12 @@ textarea {
     scrollbar-width: none;
 }
 
-.petit-text{
+.petit-text {
     font-size: 12px;
     color: grey;
 }
 
-.grand-text{
+.grand-text {
     font-size: 18px;
     color: black;
     margin: 50px 100px 0 100px;
@@ -283,22 +316,28 @@ textarea {
 }
 
 .preference-card i {
-    color: #333; /* Couleur des icônes */
+    color: #333;
+    /* Couleur des icônes */
     transition: color 0.3s ease;
 }
 
 /* Effet hover (survol) */
 .preference-card:hover {
     transform: scale(1.05);
-    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.4); /* Ombre plus sombre au survol */
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.4);
+    /* Ombre plus sombre au survol */
 }
 
 /* Effet sélectionné */
 .preference-card.selected {
-    border: 3px solid #f05423; /* Contour orange */
-    box-shadow: 0 0 15px rgba(240, 84, 35, 0.7); /* Ombre orange plus marquée */
-    transform: scale(1.05); /* Zoom */
+    border: 3px solid #f05423;
+    /* Contour orange */
+    box-shadow: 0 0 15px rgba(240, 84, 35, 0.7);
+    /* Ombre orange plus marquée */
+    transform: scale(1.05);
+    /* Zoom */
 }
+
 /*page profil*/
 
 .truncate {
@@ -318,8 +357,17 @@ textarea {
 
 /*page evenement*/
 
-.img-evenement { 
+.img-evenement {
     border-radius: 0 30px 30px 30px;
+        height: 300px;
+        object-fit: cover;
+        width: 100%;
+}
+
+.img-carousel {
+    height: 700px;
+    object-fit: cover;
+    width: 100%;
 }
 
 .p-orange {
@@ -327,92 +375,98 @@ textarea {
 }
 
 
-.accordion-button:focus{
+.accordion-button:focus {
     box-shadow: none;
 }
 
-.accordion-button:not(.collapsed){
+.accordion-button:not(.collapsed) {
     background-color: #ffffff;
     box-shadow: none;
     color: black;
 }
 
-.accordion-button{
+.accordion-button {
     text-align: center;
     font-size: inherit;
 }
 
-.text-profile li{
+.text-profil li {
+    font-size: 20px;
+    color: #000000;
+}
+
+.text-profil-orange {
     font-size: 20px;
     color: #F37038;
 }
-=======
+
 .retour {
     width: 40px;
 }
 
 /*page plan du site*/
 
-      /* Style global spécifique au plan du site */
-      .plan-container {
-        font-family: Arial, sans-serif;
-        background-color: #f8f9fa;
-        color: #333;
-        margin: 0;
-        padding: 0;
-    }
-    /* Carte principale */
-    .plan-card {
-        background-color: #fff;
-        border-radius: 10px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        padding: 30px;
-        margin: 40px auto;
-        max-width: 900px;
-    }
-    
-    /* Titre principal */
-    .plan-title {
-        font-family: 'Verdana', sans-serif;
-        font-size: 2.5rem;
-        color: #F37038;
-        text-transform: uppercase;
-        text-align: center;
-        margin-bottom: 20px;
-    }
-    
-    /* Liste principale */
-    .plan-list {
-        padding-left: 20px;
-        list-style-type: none;
-    }
-    
-    /* Liens principaux */
-    .plan-list > li > a {
-        font-weight: bold;
-        color: #F37038;
-        text-decoration: none;
-        font-size: 1.2rem;
-    }
-    
-    .plan-list > li > a:hover {
-        text-decoration: underline;
-        color: #F37038;
-    }
-    
-    /* Sous-liste */
-    .plan-sublist {
-        margin-left: 20px;
-        list-style-type: disc;
-    }
-    
-    .plan-sublist li a {
-        color: #3498db;
-        font-weight: normal;
-        font-size: 1rem;
-    }
-    
-    .plan-sublist li a:hover {
-        text-decoration: underline;
-        color: #2980b9;
-    }
+/* Style global spécifique au plan du site */
+.plan-container {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* Carte principale */
+.plan-card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    margin: 40px auto;
+    max-width: 900px;
+}
+
+/* Titre principal */
+.plan-title {
+    font-family: 'Verdana', sans-serif;
+    font-size: 2.5rem;
+    color: #F37038;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Liste principale */
+.plan-list {
+    padding-left: 20px;
+    list-style-type: none;
+}
+
+/* Liens principaux */
+.plan-list>li>a {
+    font-weight: bold;
+    color: #F37038;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+
+.plan-list>li>a:hover {
+    text-decoration: underline;
+    color: #F37038;
+}
+
+/* Sous-liste */
+.plan-sublist {
+    margin-left: 20px;
+    list-style-type: disc;
+}
+
+.plan-sublist li a {
+    color: #3498db;
+    font-weight: normal;
+    font-size: 1rem;
+}
+
+.plan-sublist li a:hover {
+    text-decoration: underline;
+    color: #2980b9;
+}
