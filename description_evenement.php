@@ -15,11 +15,7 @@ $resultats = $pdo->query($requete);
 $tabType = $resultats->fetchAll(PDO::FETCH_ASSOC);
 $resultats->closeCursor();
 
-
-
-
 ?>
-
 
 <!DOCTYPE html>
 <html lang="fr">

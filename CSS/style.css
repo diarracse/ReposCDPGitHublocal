@@ -423,3 +423,69 @@ textarea {
 .retour {
     width: 40px;
 }
+
+/*page plan du site*/
+
+      /* Style global spécifique au plan du site */
+      .plan-container {
+        font-family: Arial, sans-serif;
+        background-color: #f8f9fa;
+        color: #333;
+        margin: 0;
+        padding: 0;
+    }
+    /* Carte principale */
+    .plan-card {
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        padding: 30px;
+        margin: 40px auto;
+        max-width: 900px;
+    }
+    
+    /* Titre principal */
+    .plan-title {
+        font-family: 'Verdana', sans-serif;
+        font-size: 2.5rem;
+        color: #F37038;
+        text-transform: uppercase;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    
+    /* Liste principale */
+    .plan-list {
+        padding-left: 20px;
+        list-style-type: none;
+    }
+    
+    /* Liens principaux */
+    .plan-list > li > a {
+        font-weight: bold;
+        color: #F37038;
+        text-decoration: none;
+        font-size: 1.2rem;
+    }
+    
+    .plan-list > li > a:hover {
+        text-decoration: underline;
+        color: #F37038;
+    }
+    
+    /* Sous-liste */
+    .plan-sublist {
+        margin-left: 20px;
+        list-style-type: disc;
+    }
+    
+    .plan-sublist li a {
+        color: #3498db;
+        font-weight: normal;
+        font-size: 1rem;
+    }
+    
+    .plan-sublist li a:hover {
+        text-decoration: underline;
+        color: #2980b9;
+    }
