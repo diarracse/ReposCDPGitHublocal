@@ -60,12 +60,15 @@
                 </section>
                 <section class="mb-4">
                     <h2 class="h5 text-orange mb-4">8. Modifications de la politique de confidentialité</h2>
-                    <p>Nous nous réservons le droit de modifier cette politique de confidentialité à tout moment. Toute modification sera publiée sur cette page.</p>
+                    <p>Nous nous réservons le droit de modifier cette politique de confidentialité à tout moment. Toute modification sera publiée sur cette page, avec la date de la mise à jour.</p>
                 </section>
                 <section class="mb-4">
                     <h2 class="h5 text-orange mb-4">9. Contact</h2>
                     <p>Pour toute question ou préoccupation concernant cette politique de confidentialité, veuillez nous contacter à <a href="mailto:vivre@saintfortunat.org">vivre@saintfortunat.org</a>.</p>
                 </section>
+
+
+                <p>Date de mise à jour: 19 Décembre 2024</p>
             </div>
         </div>
 
