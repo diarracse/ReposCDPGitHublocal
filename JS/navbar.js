@@ -1,8 +1,8 @@
 document.addEventListener('scroll', () => {
-    const navbar = document.querySelector('.navbar');
-    const rect = navbar.getBoundingClientRect();
-    const windowHeight = window.innerHeight; // Renommez pour éviter les conflits
-    const offset = -1 * windowHeight;
+    let navbar = document.querySelector('.navbar');
+    let rect = navbar.getBoundingClientRect();
+    let windowHeight = window.innerHeight; // Renommez pour éviter les conflits
+    let offset = -1 * windowHeight;
 
 
     if (rect.top <= 0 && !navbar.classList.contains('position-fixed')) {
