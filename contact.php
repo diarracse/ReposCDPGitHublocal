@@ -11,16 +11,18 @@
 
 <body>
     <?php include('include/menu.php'); ?>
-    <div class="text-center mt-5">
-        <h1 class="fw-bold">Nous contacter</h1>
-
-        <p class="grand-text">Indiquez-nous ce que vous pensez de notre site Web, de notre Association ou de nos activités.Si vous nous communiquez vos coordonnées, nous serons en mesure de vous contacter pour apporter une réponse personnalisée</p>
-    </div>
-
+   
+    
     <main class="main-form">
         <div class="form-container">
+  
+        <h2>Nous contacter</h2>
+
+        <p class="moyen-text mb-5">Indiquez-nous ce que vous pensez de notre site Web, de notre Association ou de nos activités.Si vous nous communiquez vos coordonnées, nous serons en mesure de vous contacter pour apporter une réponse personnalisée</p>
+
 
             <form>
+                
                 <div class="d-md-flex w-100 gap-4">
                     <div class="form-group w-100">
                         <label for="nom">Nom</label>

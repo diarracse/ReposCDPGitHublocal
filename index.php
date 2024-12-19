@@ -95,7 +95,7 @@ $resultats->closeCursor();
             <div class="row mt-5">
                 <div class="col-md-4 d-flex flex-column align-items-center mb-5">
                     <img class="mb-4" src="images/accueil/annee.png" alt="">
-                    <p class="text-light fs-3 fw-bold">22 ans</p>
+                    <p class="text-light fs-3 fw-bold">22</p>
                     <p class="text-light">Années d'existence</p>
                 </div>
                 <div class="col-md-4 d-flex flex-column align-items-center mb-5">
