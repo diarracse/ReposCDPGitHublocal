@@ -31,8 +31,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $adherent = new Adherent($nom, $prenom, $email, $type_adhesion, $mot_de_passe);
                 $adherent->save($pdo);
 
-                // Redirection vers la page de préférences
-                header('Location: preference.php');
+                // Redirection vers la page de  connexion pour garder la session active
+                header('Location: connexions.php');
                 exit(); // Arrête l'exécution pour éviter tout affichage après la redirection
             }
         } catch (Exception $e) {
@@ -63,13 +63,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     <div class="text-center mt-5">
 
-        <p class="grand-text">Pour soutenir notre association et participer activement à la vie locale, remplissez ce formulaire pour devenenir adhérent de Vivre Saint Fortunat. </p>
     </div>
 
     <main class="main-form">
         <div class="form-container">
             <h2>Inscription</h2>
 
+            <p class="moyen-text mb-5">Pour soutenir notre association et participer activement à la vie locale, remplissez ce formulaire pour devenenir adhérent de Vivre Saint Fortunat. </p>
 
             
 
