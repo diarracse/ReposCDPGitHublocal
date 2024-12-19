@@ -1,6 +1,6 @@
 <?php
-
 include("config/config.php");
+session_start();
 
 // recupération des données
 $requete = 'SELECT * FROM evenement WHERE id_evenement = ' . $_GET['id_evenement'];
@@ -14,6 +14,7 @@ $requete = 'SELECT * FROM evenement WHERE id_type = ' . $tabEvenement['id_type']
 $resultats = $pdo->query($requete);
 $tabType = $resultats->fetchAll(PDO::FETCH_ASSOC);
 $resultats->closeCursor();
+
 
 ?>
 
@@ -48,36 +49,11 @@ $resultats->closeCursor();
             <p class="grand-text p-justify"><?php echo $tabEvenement['description']; ?></p>
             <div class="my-5">
 
-                <a class="CTA" href="participer_evenement.php">Participer a l'événement</a>
+            <a class="CTA" href="participer_evenement.php?id_evenement=<?php echo $_GET['id_evenement']; ?>">Participer à l'événement</a>
+
 
             </div>
         </div>
-
-
-        <!--
-        <div class="col-6 offset-3 text-center">
-            <h2 class="mb-5">Autres événements</h2>
-            <ul class="list-group list-group-light list-group-horizontal-md mb-5 text-start">
-                <?php
-                foreach ($tabType as $evenement) {
-                ?>
-                    <li class="list-group-item w-100 "><a class="text-decoration-none text-black" href="description_evenement.php?id_evenement=<?php echo $evenement['id_evenement'] ?>">
-                            <h5 class="fw-bold"><?php echo $evenement["titre"]; ?></h5>
-                            <p class="text-muted mb-2 fw-bold"><?php echo $evenement["date_evenement"]; ?></p>
-                            <img src="images/evenement/<?php echo $evenement["image"]; ?>" alt="image événement" class="w-100">
-                            <p class="mb-0 truncate"><?php echo $evenement["description"]; ?></p>
-                        </a>
-                    </li>
-                <?php
-                };
-                ?>
-            </ul>
-            <a class="CTA" href="evenement.php" role="button" data-mdb-ripple-init data-ripple-color="dark">View all</a>
-        </div>
-
-            -->
-
-
 
         <div class="row mx-5 text-center justify-content-center my-5">
 
