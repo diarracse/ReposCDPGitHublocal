@@ -1,6 +1,6 @@
 <footer class="py-5 mt-5">
     <div class="container">
-        <div class="row align-items-center">
+        <div class="row d-flex align-items-start">
             
             <!-- Logo -->
             <div class="col-12 col-md-4 mb-3">
@@ -13,7 +13,7 @@
             <div class="col-12 col-md-5 mb-3">
                 <ul>
                 <h5 class="text-white fw-bold">CORDONNÉES</h5>
-                <li class="text-decoration-none text-white fw-bold"><a href="tel:+33063456789">06 23 45 67 89</a><br></li>
+                <li class="text-decoration-none text-white fw-bold"><a href="tel:+330614136544">06 14 13 65 44</a><br></li>
 
                 <li class="text-decoration-none text-white "><address class="footer-icon bi bi-geo-alt">
                     Vivre Saint Fortunat - Mairie de Saint<br>
