@@ -4,6 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Accédez au plan du site de VIVRE SAINT-FORTUNAT. Retrouvez facilement toutes les pages : accueil, événements, adhésion, contact, mentions légales, et bien plus." />
+
     <title>Plan du site</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="CSS/style.css">
