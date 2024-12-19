@@ -82,6 +82,7 @@ function supprimerEvenement() {
     let idEvenement = this.getAttribute('data-id');
 
     if (!confirm("Voulez-vous vraiment supprimer cet évènement ?")) {
+        
         return;
     }
 

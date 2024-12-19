@@ -1,6 +1,15 @@
 <?php
 // détecter la page active
 $pageActive = basename($_SERVER['PHP_SELF']);
+unset($_SESSION['redirige']);
+
+$page_interdite = "admin.php";
+
+// Vérifie si l'utilisateur n'est pas sur la page interdite
+if (basename($_SERVER['PHP_SELF']) !== $page_interdite) {
+    // Action à exécuter
+    unset($_SESSION['message_ajouter']);
+}
 ?>
 
 <!-- menu -->

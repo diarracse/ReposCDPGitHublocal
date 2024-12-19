@@ -137,7 +137,7 @@ footer ul li a:hover {
     border-radius: 100px;
     text-decoration: none;
     color: #ffffff;
-    padding: 10px 17px;
+    padding: 10px 15px;
     margin: 10px 0;
     transition: 0.5s ease;
     background-color: #ff0000;
@@ -370,7 +370,7 @@ textarea {
 }
 
 .img-carousel {
-    height: 700px;
+    height: 600px;
     object-fit: cover;
     width: 100%;
 }

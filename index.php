@@ -2,10 +2,15 @@
 include("config/config.php");
 session_start();
 
+unset($_SESSION['redirige']);
+unset($_SESSION['message_ajouter']);
+
+
+
 
 $requete = 'SELECT * FROM Evenement WHERE date_evenement >= CURDATE() ORDER BY date_evenement ASC LIMIT 1';
 $resultats = $pdo->query($requete);
-$evenement_recent = $resultats->fetchAll(PDO::FETCH_ASSOC);
+$evenement_recent = $resultats->fetch(PDO::FETCH_ASSOC);
 $resultats->closeCursor();
 
 
@@ -129,20 +134,14 @@ $resultats->closeCursor();
 
         <div id="carouselExampleIndicators" class="carousel slide container">
 
-            <div class="carousel-indicators">
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-            </div>
-
             <div class="carousel-inner">
 
                 <div class="carousel-item active">
 
-                    <img class="d-block w-100 img-carousel" src="images/evenement/<?php echo $evenement_recent[0]['image'] ?>" alt="image évènement">
+                    <img class="d-block w-100 img-carousel" src="images/evenement/<?php echo $evenement_recent['image'] ?>" alt="image évènement">
 
                     <div class="d-flex justify-content-center">
-                        <a class="CTA-carousel" href="description_evenement.php?id_evenement=<?php echo $evenement_recent[0]['id_evenement']; ?>"> <?php echo $evenement_recent[0]['titre'];?> (Découvrir)</a>
+                        <a class="CTA-carousel" href="description_evenement.php?id_evenement=<?php echo $evenement_recent['id_evenement']; ?>"> <?php echo $evenement_recent['titre'];?> (Découvrir)</a>
                     </div>
                 </div>
 
@@ -157,11 +156,11 @@ $resultats->closeCursor();
                 <?php endforeach; ?>
             </div>
 
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+            <button class="carousel-control-prev mb-5" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Previous</span>
             </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+            <button class="carousel-control-next mb-5" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Next</span>
             </button>
