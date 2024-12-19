@@ -380,7 +380,6 @@ textarea {
 }
 
 
-.accordion-button:focus{
 
 .accordion-button:focus {
     box-shadow: none;
@@ -433,7 +432,7 @@ textarea {
 }
 .btn-home:hover {
     background-color: #0056b3;
-=======
+}
 
 .retour {
     width: 40px;
